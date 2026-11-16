@@ -1,0 +1,7 @@
+framework:
+    rate_limiter:
+        # The learning assistant may call a paid LLM: cap questions per learner.
+        assistant:
+            policy: sliding_window
+            limit: 20
+            interval: '10 minutes'

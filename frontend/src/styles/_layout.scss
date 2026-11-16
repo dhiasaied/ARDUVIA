@@ -1,0 +1,177 @@
+@use 'tokens' as *;
+
+.viewport { position: fixed; inset: 0; overflow: hidden; background: var(--bg); }
+
+.artboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 45% 45%, #ffffffa6, transparent 60%),
+    var(--bg);
+}
+
+// decorative PCB traces behind everything
+.traces {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  fill: none;
+  stroke: var(--trace);
+  stroke-width: 2;
+  opacity: 0.55;
+  circle { fill: var(--bg); stroke-width: 2; }
+}
+
+.pixels {
+  position: absolute;
+  top: 10px;
+  inset-inline-end: 14px;
+  width: 52px;
+  height: 52px;
+  fill: var(--line);
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.app-foot { display: none; }
+
+// ───────────────────────── compact (phones, portrait tablets) ─────────────────────────
+.viewport.is-compact {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  .artboard {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'brand' 'status' 'stage' 'lessons' 'info' 'code' 'foot';
+    row-gap: 12px;
+    width: 100%;
+    min-height: 100%;
+    overflow: visible;
+    padding: 14px max(16px, env(safe-area-inset-right)) calc(96px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  .traces, .pixels { display: none; }
+
+  .brand { position: relative; inset: auto; grid-area: brand; align-items: center; }
+  .brand-logo { width: 54px; height: 30px; }
+  .brand-rule { height: 38px; margin: 0 10px 0 10px; }
+  .brand-text h1 { font-size: 20px; line-height: 24px; }
+  .brand-text p { font-size: 11.5px; }
+
+  .status { position: relative; inset: auto; grid-area: status; width: 100%; height: auto; display: flex; gap: 12px; align-items: center; padding: 8px; }
+  .progress-card { position: relative; inset: auto; flex: 1; width: auto; height: 58px; }
+  .clock { position: relative; inset: auto; font-size: 14.5px; line-height: 19px; padding-inline-end: 6px; }
+
+  .stage {
+    position: relative;
+    inset: auto;
+    grid-area: stage;
+    height: min(62vh, 440px);
+    min-height: 300px;
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+  }
+  .viewbar { inset-inline-start: 50%; bottom: 8px; }
+  .view-hint { display: none; }
+  .minimap { display: none; }
+  .schematic { left: 8px; right: 8px; top: 8px; width: auto; }
+
+  .lessons { position: relative; inset: auto; grid-area: lessons; min-width: 0; }
+  .lesson { --w: 228; height: 78px; }
+  .lesson-thumb { height: 70px; width: 80px; }
+  .lesson-title { font-size: 13.5px; white-space: normal; line-height: 17px; }
+  .lesson.is-active .lesson-title { font-size: 14px; }
+  .lesson-step { display: none; }
+
+  .info-card { position: relative; inset: auto; grid-area: info; width: 100%; height: auto; min-height: 0; }
+  .info-card.is-expanded { height: auto; }
+  .info-body { height: auto; max-height: none; }
+  .info-content { max-height: none; overflow: visible; }
+  .tabs { gap: 18px; overflow-x: auto; scrollbar-width: none; }
+  .tabs button { font-size: 14.5px; white-space: nowrap; }
+  .expand, .btn-expand { display: none !important; }
+
+  .code-card { position: relative; inset: auto; grid-area: code; width: 100%; height: 380px; }
+  .code-card.is-expanded { height: 380px; }
+  .info-card.is-covered, .code-card.is-covered { opacity: 1; pointer-events: auto; transform: none; }
+
+  .app-foot { display: block; grid-area: foot; padding: 6px 0 0; }
+  .credit-side { display: none; }
+
+  // bottom tab bar
+  .sidebar {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100% !important;
+    height: calc(72px + env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
+    background: linear-gradient(180deg, #edf0e8, var(--sidebar));
+    box-shadow: 0 -1px 0 rgba(150, 170, 150, 0.6), 0 -10px 30px -20px rgba(38, 61, 56, 0.5);
+    z-index: 20;
+  }
+  .side-toggle { display: none; }
+  .side-nav { position: static; display: flex; justify-content: space-around; align-items: center; height: 72px; padding: 0 6px; }
+  .side-nav li { position: static; width: auto; padding: 0; display: block; }
+  .side-nav a, .sidebar.is-open .side-nav a { width: 58px; height: 52px; justify-content: center; border-radius: 12px; }
+  .side-nav a svg { margin: 0; }
+  .side-label { display: none; }
+  .side-nav li.is-on a::before { left: 14px; right: 14px; top: auto; bottom: -9px; width: auto; height: 4px; border-radius: 3px 3px 0 0; }
+
+  .flyout, .flyout.beside-open {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    top: auto;
+    bottom: calc(82px + env(safe-area-inset-bottom));
+    width: auto;
+    max-height: min(70vh, 640px);
+    transform: translateY(12px);
+    z-index: 19;
+  }
+  .flyout.is-open { transform: none; }
+  .flyout-scrim { position: fixed; inset: 0; z-index: 18; background: rgba(38, 61, 56, 0.12); }
+  .fly-list { gap: 4px; }
+  .fly-list button, .fly-list label { padding: 10px 8px; }
+}
+
+// phones in landscape: stage on the left, panels scroll on the right
+.viewport.is-compact.is-landscape {
+  .artboard {
+    grid-template-columns: minmax(0, 1.5fr) minmax(250px, 1fr);
+    grid-template-rows: repeat(5, auto) 1fr;
+    grid-template-areas: 'stage brand' 'stage status' 'stage lessons' 'stage info' 'stage code' 'stage foot';
+    align-items: start;
+    gap: 12px 14px;
+    padding-block: 8px 14px;
+    padding-inline: calc(84px + env(safe-area-inset-left)) calc(10px + env(safe-area-inset-right));
+  }
+  .stage { position: sticky; top: 8px; height: calc(100dvh - 16px); min-height: 240px; }
+  .sidebar {
+    top: 0; bottom: 0; inset-inline-end: auto;
+    width: calc(70px + env(safe-area-inset-left)) !important;
+    height: 100%;
+    padding: 0;
+    padding-inline-start: env(safe-area-inset-left);
+    background: linear-gradient(90deg, #e5e9df 0%, var(--sidebar) 70%, #edf0e8 100%);
+  }
+  .side-nav { flex-direction: column; justify-content: center; height: 100%; gap: 4px; }
+  .side-nav li.is-on a::before { inset-block: 10px; inset-inline: -4px auto; width: 3px; height: auto; }
+  .flyout, .flyout.beside-open { inset-inline: calc(80px + env(safe-area-inset-left)) auto; width: 320px; top: 8px; bottom: auto; max-height: calc(100dvh - 16px); transform: translateX(calc(-10px * var(--dir))); }
+  .flyout.is-open { transform: none; }
+  .brand-logo { width: 48px; height: 27px; }
+  .brand-text h1 { font-size: 18px; line-height: 21px; }
+  .brand-text p { font-size: 11px; }
+}

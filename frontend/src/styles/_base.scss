@@ -1,0 +1,50 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  overflow: hidden;
+}
+h1, h2, h3, p, ol, ul, dl, dd, figure { margin: 0; padding: 0; }
+ol, ul { list-style: none; }
+button, select, input, textarea { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; }
+code { font-family: var(--mono); }
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+app-sidebar, app-brand, app-status, app-stage, app-info-card, app-code-card, app-lesson-strip { display: contents; }
+
+.reduced *, .reduced *::before, .reduced *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+@keyframes pulse { 50% { opacity: 0.45; } }
+@keyframes celebrate {
+  0% { transform: none; }
+  30% { transform: translateY(-6px) scale(1.03); box-shadow: 0 0 0 6px rgba(82, 121, 111, 0.18); }
+  100% { transform: none; }
+}
+@keyframes nudge { 50% { box-shadow: 0 0 0 4px rgba(82, 121, 111, 0.18); } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+// ───────────────────────── Right-to-left (Arabic) ─────────────────────────
+[dir='rtl'] {
+  // Arabic is cursive: tracking breaks letter joins, and it has no case.
+  body, body *:not(code):not(pre):not(.code-input):not(.clock) { letter-spacing: 0 !important; }
+  .info-content, .fly-text small, .callout p, .features li, .steps li { line-height: 1.65; }
+
+  // directional glyphs point the other way
+  .chev svg, .side-toggle svg { transform: scaleX(-1); }
+  .traces { transform: scaleX(-1); }
+  .fly-lang select { background-position: left 6px center; }
+  .credit-side { rotate: 0deg; }
+}
+
+// Code, serial output and pin identifiers always read left-to-right.
+.code-wrap, .console, .pin-table code, .readout, .signal { direction: ltr; unicode-bidi: isolate; }
+.clock span { unicode-bidi: isolate; }

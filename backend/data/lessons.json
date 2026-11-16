@@ -1,0 +1,7182 @@
+[
+  {
+    "slug": "board",
+    "position": 1,
+    "category": "basics",
+    "code": "void setup() {\n  pinMode(LED_BUILTIN, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(LED_BUILTIN, HIGH);\n  delay(1000);\n}",
+    "en": {
+      "title": "Meet the board",
+      "subtitle": "Arduino Uno",
+      "heading": "Arduino Uno",
+      "lede": "The Arduino Uno is a microcontroller board built around the ATmega328P. Easy to pick up, it is perfect for learning electronics, programming and prototyping.",
+      "features": [
+        [
+          "chip",
+          "Open, well-documented hardware"
+        ],
+        [
+          "bulb",
+          "A huge community ready to help"
+        ],
+        [
+          "gear",
+          "Used in classrooms, at home and in real products"
+        ]
+      ],
+      "pinoutSub": "How the Uno’s headers are grouped.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D0–D13",
+          "Digital I/O",
+          "Read buttons, drive LEDs. ~3, 5, 6, 9, 10 and 11 can do PWM."
+        ],
+        [
+          "#1aa3a1",
+          "A0–A5",
+          "Analog inputs",
+          "10-bit readings: 0–1023 for 0–5 V."
+        ],
+        [
+          "#d64a3a",
+          "5V · 3.3V",
+          "Power out",
+          "Regulated voltage for sensors and modules."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Ground",
+          "Every circuit returns here."
+        ],
+        [
+          "#c0652d",
+          "VIN",
+          "Power in",
+          "Raw voltage from the barrel jack, 7–12 V."
+        ],
+        [
+          "#8e9094",
+          "RESET",
+          "Reset",
+          "Pull LOW to restart the sketch."
+        ]
+      ],
+      "steps": [
+        "<code>setup()</code> runs once, when the board powers up or resets.",
+        "<code>pinMode(LED_BUILTIN, OUTPUT)</code> makes pin 13 — wired to the on-board “L” LED — an output.",
+        "<code>loop()</code> then repeats forever. <code>digitalWrite(…, HIGH)</code> puts 5 V on the pin and lights the LED.",
+        "Click <b>Run</b>: TX/RX flicker while uploading, then the L LED turns on. Click any part to learn what it does."
+      ],
+      "specs": [
+        [
+          "Microcontroller",
+          "ATmega328P"
+        ],
+        [
+          "Operating voltage",
+          "5 V"
+        ],
+        [
+          "Input voltage",
+          "7–12 V"
+        ],
+        [
+          "Digital I/O pins",
+          "14 (6 PWM)"
+        ],
+        [
+          "Analog inputs",
+          "6"
+        ],
+        [
+          "Flash memory",
+          "32 KB"
+        ],
+        [
+          "SRAM / EEPROM",
+          "2 KB / 1 KB"
+        ],
+        [
+          "Clock speed",
+          "16 MHz"
+        ],
+        [
+          "Size",
+          "68.6 × 53.4 mm"
+        ]
+      ],
+      "callouts": [
+        [
+          "usb",
+          "USB port",
+          "Plugs into your computer to program and power the board."
+        ],
+        [
+          "mcu",
+          "Microcontroller",
+          "The ATmega328P runs your code."
+        ],
+        [
+          "digital",
+          "Digital pins",
+          "Pins 0–13 for digital inputs and outputs. (~ = PWM)"
+        ],
+        [
+          "jack",
+          "Power jack",
+          "External DC supply (7–12 V recommended)."
+        ],
+        [
+          "power",
+          "Power pins",
+          "5V, 3.3V, GND and VIN to power your circuits."
+        ],
+        [
+          "analog",
+          "Analog pins",
+          "A0–A5 to read analog signals."
+        ]
+      ],
+      "challenge": {
+        "title": "Wake up the L LED",
+        "goal": "Make the built-in L LED blink on and off instead of staying lit.",
+        "hint": "Add a <code>digitalWrite(LED_BUILTIN, LOW)</code> and a second <code>delay()</code> inside <code>loop()</code>."
+      }
+    },
+    "fr": {
+      "title": "Découvrir la carte",
+      "subtitle": "Arduino Uno",
+      "heading": "Arduino Uno",
+      "lede": "L’Arduino Uno est une carte à microcontrôleur basée sur l’ATmega328P. Simple à prendre en main, elle est idéale pour découvrir l’électronique, la programmation et le prototypage.",
+      "features": [
+        [
+          "chip",
+          "Matériel libre et documenté"
+        ],
+        [
+          "bulb",
+          "Une immense communauté prête à aider"
+        ],
+        [
+          "gear",
+          "Utilisée à l’école, chez soi et dans de vrais produits"
+        ]
+      ],
+      "pinoutSub": "Comment les connecteurs de l’Uno sont regroupés.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D0–D13",
+          "E/S numériques",
+          "Lire des boutons, piloter des LED. ~3, 5, 6, 9, 10 et 11 savent faire du PWM."
+        ],
+        [
+          "#1aa3a1",
+          "A0–A5",
+          "Entrées analogiques",
+          "Mesures sur 10 bits : 0–1023 pour 0–5 V."
+        ],
+        [
+          "#d64a3a",
+          "5V · 3.3V",
+          "Sortie d’alimentation",
+          "Tension régulée pour capteurs et modules."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Masse",
+          "Tout circuit doit y revenir."
+        ],
+        [
+          "#c0652d",
+          "VIN",
+          "Entrée d’alimentation",
+          "Tension brute de la prise jack, 7–12 V."
+        ],
+        [
+          "#8e9094",
+          "RESET",
+          "Redémarrage",
+          "Mettre à LOW pour relancer le programme."
+        ]
+      ],
+      "steps": [
+        "<code>setup()</code> s’exécute une seule fois, à la mise sous tension ou après un reset.",
+        "<code>pinMode(LED_BUILTIN, OUTPUT)</code> configure la broche 13 — reliée à la LED « L » de la carte — en sortie.",
+        "<code>loop()</code> tourne ensuite en boucle. <code>digitalWrite(…, HIGH)</code> applique 5 V sur la broche et allume la LED.",
+        "Cliquez sur <b>Exécuter</b> : TX/RX clignotent pendant le téléversement, puis la LED L s’allume. Cliquez sur un composant pour en savoir plus."
+      ],
+      "specs": [
+        [
+          "Microcontrôleur",
+          "ATmega328P"
+        ],
+        [
+          "Tension de fonctionnement",
+          "5 V"
+        ],
+        [
+          "Tension d’entrée",
+          "7–12 V"
+        ],
+        [
+          "Broches d’E/S numériques",
+          "14 (dont 6 PWM)"
+        ],
+        [
+          "Entrées analogiques",
+          "6"
+        ],
+        [
+          "Mémoire flash",
+          "32 Ko"
+        ],
+        [
+          "SRAM / EEPROM",
+          "2 Ko / 1 Ko"
+        ],
+        [
+          "Fréquence d’horloge",
+          "16 MHz"
+        ],
+        [
+          "Dimensions",
+          "68,6 × 53,4 mm"
+        ]
+      ],
+      "callouts": [
+        [
+          "usb",
+          "Port USB",
+          "Se branche à l’ordinateur pour programmer et alimenter la carte."
+        ],
+        [
+          "mcu",
+          "Microcontrôleur",
+          "L’ATmega328P exécute votre code."
+        ],
+        [
+          "digital",
+          "Broches numériques",
+          "Broches 0–13 pour les entrées et sorties numériques. (~ = PWM)"
+        ],
+        [
+          "jack",
+          "Prise d’alimentation",
+          "Alimentation externe continue (7–12 V conseillés)."
+        ],
+        [
+          "power",
+          "Broches d’alimentation",
+          "5V, 3.3V, GND et VIN pour alimenter vos montages."
+        ],
+        [
+          "analog",
+          "Broches analogiques",
+          "A0–A5 pour lire des signaux analogiques."
+        ]
+      ],
+      "challenge": {
+        "title": "Réveillez la LED L",
+        "goal": "Faites clignoter la LED L intégrée au lieu de la laisser allumée.",
+        "hint": "Ajoutez <code>digitalWrite(LED_BUILTIN, LOW)</code> et un second <code>delay()</code> dans <code>loop()</code>."
+      }
+    },
+    "es": {
+      "title": "Conoce la placa",
+      "subtitle": "Arduino Uno",
+      "heading": "Arduino Uno",
+      "lede": "El Arduino Uno es una placa de microcontrolador basada en el ATmega328P. Fácil de usar, es perfecta para aprender electrónica, programación y prototipado.",
+      "features": [
+        [
+          "chip",
+          "Hardware abierto y bien documentado"
+        ],
+        [
+          "bulb",
+          "Una enorme comunidad dispuesta a ayudar"
+        ],
+        [
+          "gear",
+          "Se usa en aulas, en casa y en productos reales"
+        ]
+      ],
+      "pinoutSub": "Cómo se agrupan los conectores del Uno.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D0–D13",
+          "E/S digitales",
+          "Leer botones, controlar LED. ~3, 5, 6, 9, 10 y 11 admiten PWM."
+        ],
+        [
+          "#1aa3a1",
+          "A0–A5",
+          "Entradas analógicas",
+          "Lecturas de 10 bits: 0–1023 para 0–5 V."
+        ],
+        [
+          "#d64a3a",
+          "5V · 3.3V",
+          "Salida de alimentación",
+          "Tensión regulada para sensores y módulos."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Tierra",
+          "Todo circuito vuelve aquí."
+        ],
+        [
+          "#c0652d",
+          "VIN",
+          "Entrada de alimentación",
+          "Tensión directa del conector jack, 7–12 V."
+        ],
+        [
+          "#8e9094",
+          "RESET",
+          "Reinicio",
+          "Ponlo en LOW para reiniciar el programa."
+        ]
+      ],
+      "steps": [
+        "<code>setup()</code> se ejecuta una sola vez, al encender la placa o tras un reinicio.",
+        "<code>pinMode(LED_BUILTIN, OUTPUT)</code> configura el pin 13 —conectado al LED «L» de la placa— como salida.",
+        "Después, <code>loop()</code> se repite sin fin. <code>digitalWrite(…, HIGH)</code> aplica 5 V al pin y enciende el LED.",
+        "Pulsa <b>Ejecutar</b>: TX/RX parpadean durante la carga y luego se enciende el LED L. Haz clic en cualquier componente para saber para qué sirve."
+      ],
+      "specs": [
+        [
+          "Microcontrolador",
+          "ATmega328P"
+        ],
+        [
+          "Tensión de funcionamiento",
+          "5 V"
+        ],
+        [
+          "Tensión de entrada",
+          "7–12 V"
+        ],
+        [
+          "Pines de E/S digitales",
+          "14 (6 con PWM)"
+        ],
+        [
+          "Entradas analógicas",
+          "6"
+        ],
+        [
+          "Memoria flash",
+          "32 KB"
+        ],
+        [
+          "SRAM / EEPROM",
+          "2 KB / 1 KB"
+        ],
+        [
+          "Velocidad de reloj",
+          "16 MHz"
+        ],
+        [
+          "Dimensiones",
+          "68,6 × 53,4 mm"
+        ]
+      ],
+      "callouts": [
+        [
+          "usb",
+          "Puerto USB",
+          "Se conecta al ordenador para programar y alimentar la placa."
+        ],
+        [
+          "mcu",
+          "Microcontrolador",
+          "El ATmega328P ejecuta tu código."
+        ],
+        [
+          "digital",
+          "Pines digitales",
+          "Pines 0–13 para entradas y salidas digitales. (~ = PWM)"
+        ],
+        [
+          "jack",
+          "Conector de alimentación",
+          "Alimentación externa continua (7–12 V recomendados)."
+        ],
+        [
+          "power",
+          "Pines de alimentación",
+          "5V, 3.3V, GND y VIN para alimentar tus montajes."
+        ],
+        [
+          "analog",
+          "Pines analógicos",
+          "A0–A5 para leer señales analógicas."
+        ]
+      ],
+      "challenge": {
+        "title": "Despierta el LED L",
+        "goal": "Haz que el LED L integrado parpadee en lugar de quedarse encendido.",
+        "hint": "Añade <code>digitalWrite(LED_BUILTIN, LOW)</code> y un segundo <code>delay()</code> dentro de <code>loop()</code>."
+      }
+    },
+    "ar": {
+      "title": "تعرّف على اللوحة",
+      "subtitle": "Arduino Uno",
+      "heading": "Arduino Uno",
+      "lede": "لوحة Arduino Uno هي لوحة متحكم دقيق مبنية على شريحة ATmega328P. سهلة الاستخدام ومثالية لتعلّم الإلكترونيات والبرمجة والنمذجة الأولية.",
+      "features": [
+        [
+          "chip",
+          "عتاد مفتوح وموثّق جيدًا"
+        ],
+        [
+          "bulb",
+          "مجتمع ضخم مستعد للمساعدة"
+        ],
+        [
+          "gear",
+          "تُستخدم في الفصول الدراسية والمنازل ومنتجات حقيقية"
+        ]
+      ],
+      "pinoutSub": "كيف تُجمَّع موصلات لوحة Uno.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D0–D13",
+          "مداخل/مخارج رقمية",
+          "قراءة الأزرار والتحكم في المصابيح. المنافذ ‎~3 و5 و6 و9 و10 و11 تدعم PWM."
+        ],
+        [
+          "#1aa3a1",
+          "A0–A5",
+          "مداخل تناظرية",
+          "قراءات بدقة 10 بت: من 0 إلى 1023 لجهد من 0 إلى 5 فولت."
+        ],
+        [
+          "#d64a3a",
+          "5V · 3.3V",
+          "مخرج التغذية",
+          "جهد منظَّم للمستشعرات والوحدات."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "الأرضي",
+          "كل دارة تعود إلى هنا."
+        ],
+        [
+          "#c0652d",
+          "VIN",
+          "مدخل التغذية",
+          "الجهد الخام من مقبس التيار، من 7 إلى 12 فولت."
+        ],
+        [
+          "#8e9094",
+          "RESET",
+          "إعادة التشغيل",
+          "اجعله LOW لإعادة تشغيل البرنامج."
+        ]
+      ],
+      "steps": [
+        "تُنفَّذ <code>setup()</code> مرة واحدة فقط عند تشغيل اللوحة أو بعد إعادة ضبطها.",
+        "تجعل <code>pinMode(LED_BUILTIN, OUTPUT)</code> المنفذ 13 —المتصل بمصباح «L» على اللوحة— مخرجًا.",
+        "بعد ذلك تتكرر <code>loop()</code> بلا توقف. يضع <code>digitalWrite(…, HIGH)</code> جهد 5 فولت على المنفذ فيضيء المصباح.",
+        "انقر على <b>تشغيل</b>: يومض TX/RX أثناء الرفع ثم يضيء المصباح L. انقر على أي مكوّن لتعرف وظيفته."
+      ],
+      "specs": [
+        [
+          "المتحكم الدقيق",
+          "ATmega328P"
+        ],
+        [
+          "جهد التشغيل",
+          "5 فولت"
+        ],
+        [
+          "جهد الدخل",
+          "7–12 فولت"
+        ],
+        [
+          "منافذ الإدخال/الإخراج الرقمية",
+          "14 (منها 6 تدعم PWM)"
+        ],
+        [
+          "المداخل التناظرية",
+          "6"
+        ],
+        [
+          "ذاكرة الفلاش",
+          "32 كيلوبايت"
+        ],
+        [
+          "SRAM / EEPROM",
+          "2 كيلوبايت / 1 كيلوبايت"
+        ],
+        [
+          "سرعة الساعة",
+          "16 ميغاهرتز"
+        ],
+        [
+          "الأبعاد",
+          "68.6 × 53.4 مم"
+        ]
+      ],
+      "callouts": [
+        [
+          "usb",
+          "منفذ USB",
+          "يتصل بالحاسوب لبرمجة اللوحة وتغذيتها."
+        ],
+        [
+          "mcu",
+          "المتحكم الدقيق",
+          "شريحة ATmega328P تنفّذ شيفرتك."
+        ],
+        [
+          "digital",
+          "المنافذ الرقمية",
+          "المنافذ 0–13 للمداخل والمخارج الرقمية. (~ = PWM)"
+        ],
+        [
+          "jack",
+          "مقبس التغذية",
+          "تغذية خارجية مستمرة (يُنصح بـ 7–12 فولت)."
+        ],
+        [
+          "power",
+          "منافذ التغذية",
+          "5V و3.3V وGND وVIN لتغذية دوائرك."
+        ],
+        [
+          "analog",
+          "المنافذ التناظرية",
+          "A0–A5 لقراءة الإشارات التناظرية."
+        ]
+      ],
+      "challenge": {
+        "title": "أيقِظ المصباح L",
+        "goal": "اجعل المصباح المدمج L يومض بدلًا من أن يبقى مضاءً.",
+        "hint": "أضف <code>digitalWrite(LED_BUILTIN, LOW)</code> و<code>delay()</code> ثانيًا داخل <code>loop()</code>."
+      }
+    }
+  },
+  {
+    "slug": "blink",
+    "position": 2,
+    "category": "basics",
+    "code": "const int LED_PIN = 13;\n\nvoid setup() {\n  pinMode(LED_PIN, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(LED_PIN, HIGH);\n  delay(500);\n  digitalWrite(LED_PIN, LOW);\n  delay(500);\n}",
+    "en": {
+      "title": "Blink an LED",
+      "subtitle": "Your first circuit",
+      "heading": "Blink an LED",
+      "lede": "Your first circuit: an LED and a resistor on a breadboard, driven by pin 13. Turning the pin on and off with a pause in between makes it blink.",
+      "features": [
+        [
+          "out",
+          "Digital output with <code>digitalWrite()</code>"
+        ],
+        [
+          "res",
+          "The resistor protects the LED from too much current"
+        ],
+        [
+          "clock",
+          "<code>delay()</code> sets the blink rhythm"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#e0a33a",
+          "D13",
+          "LED anode",
+          "Through the 220 Ω resistor."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "LED cathode",
+          "The short leg goes to ground."
+        ]
+      ],
+      "steps": [
+        "<code>const int LED_PIN = 13;</code> gives the pin a readable name.",
+        "In <code>setup()</code>, <code>pinMode(LED_PIN, OUTPUT)</code> lets the pin supply current.",
+        "<code>digitalWrite(LED_PIN, HIGH)</code> lights the LED and <code>delay(500)</code> waits half a second.",
+        "Switch it off with <code>LOW</code>, wait again… and <code>loop()</code> starts over. Change <code>500</code> to speed it up!"
+      ],
+      "specs": [
+        [
+          "LED",
+          "5 mm, red"
+        ],
+        [
+          "Forward voltage",
+          "≈ 2 V"
+        ],
+        [
+          "Current",
+          "≈ 14 mA"
+        ],
+        [
+          "Resistor",
+          "220 Ω"
+        ],
+        [
+          "Period",
+          "1 s (500 ms + 500 ms)"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Holes in each short row of five are connected underneath."
+        ],
+        [
+          "resistor",
+          "220 Ω resistor",
+          "Limits the current flowing through the circuit."
+        ],
+        [
+          "led",
+          "5 mm LED",
+          "Lights when current flows from the long leg (anode) to the short leg."
+        ]
+      ],
+      "tags": [
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "resistor",
+          "Resistor"
+        ],
+        [
+          "pin13",
+          "Pin 13"
+        ],
+        [
+          "gnd",
+          "GND"
+        ],
+        [
+          "ledL",
+          "Built-in LED"
+        ]
+      ],
+      "challenge": {
+        "title": "Double speed",
+        "goal": "Make the LED blink at least twice as fast: on for 200 ms or less.",
+        "hint": "Lower both <code>delay(500)</code> values."
+      }
+    },
+    "fr": {
+      "title": "Faire clignoter une LED",
+      "subtitle": "Votre premier circuit",
+      "heading": "Faire clignoter une LED",
+      "lede": "Votre premier circuit : une LED et une résistance sur une plaque d’essai, pilotées par la broche 13. Allumer puis éteindre la broche avec une pause entre les deux la fait clignoter.",
+      "features": [
+        [
+          "out",
+          "Sortie numérique avec <code>digitalWrite()</code>"
+        ],
+        [
+          "res",
+          "La résistance protège la LED d’un courant trop fort"
+        ],
+        [
+          "clock",
+          "<code>delay()</code> règle le rythme du clignotement"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#e0a33a",
+          "D13",
+          "Anode de la LED",
+          "Via la résistance de 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Cathode de la LED",
+          "La patte courte rejoint la masse."
+        ]
+      ],
+      "steps": [
+        "<code>const int LED_PIN = 13;</code> donne un nom lisible à la broche.",
+        "Dans <code>setup()</code>, <code>pinMode(LED_PIN, OUTPUT)</code> prépare la broche à fournir du courant.",
+        "<code>digitalWrite(LED_PIN, HIGH)</code> allume la LED, <code>delay(500)</code> attend une demi-seconde.",
+        "On l’éteint avec <code>LOW</code>, on attend encore… et <code>loop()</code> recommence. Changez <code>500</code> pour accélérer !"
+      ],
+      "specs": [
+        [
+          "LED",
+          "5 mm, rouge"
+        ],
+        [
+          "Tension directe",
+          "≈ 2 V"
+        ],
+        [
+          "Courant",
+          "≈ 14 mA"
+        ],
+        [
+          "Résistance",
+          "220 Ω"
+        ],
+        [
+          "Période",
+          "1 s (500 ms + 500 ms)"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Les trous de chaque petite rangée de cinq sont reliés en dessous."
+        ],
+        [
+          "resistor",
+          "Résistance de 220 Ω",
+          "Limite le courant qui traverse le circuit."
+        ],
+        [
+          "led",
+          "LED 5 mm",
+          "S’allume quand le courant va de la patte longue (anode) vers la patte courte."
+        ]
+      ],
+      "tags": [
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "resistor",
+          "Résistance"
+        ],
+        [
+          "pin13",
+          "Broche 13"
+        ],
+        [
+          "gnd",
+          "GND"
+        ],
+        [
+          "ledL",
+          "LED intégrée"
+        ]
+      ],
+      "challenge": {
+        "title": "Vitesse double",
+        "goal": "Faites clignoter la LED au moins deux fois plus vite : allumée 200 ms ou moins.",
+        "hint": "Réduisez les deux valeurs <code>delay(500)</code>."
+      }
+    },
+    "es": {
+      "title": "Hacer parpadear un LED",
+      "subtitle": "Tu primer circuito",
+      "heading": "Hacer parpadear un LED",
+      "lede": "Tu primer circuito: un LED y una resistencia en una protoboard, controlados por el pin 13. Encender y apagar el pin con una pausa entre ambos lo hace parpadear.",
+      "features": [
+        [
+          "out",
+          "Salida digital con <code>digitalWrite()</code>"
+        ],
+        [
+          "res",
+          "La resistencia protege el LED de una corriente excesiva"
+        ],
+        [
+          "clock",
+          "<code>delay()</code> marca el ritmo del parpadeo"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#e0a33a",
+          "D13",
+          "Ánodo del LED",
+          "A través de la resistencia de 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Cátodo del LED",
+          "La pata corta va a tierra."
+        ]
+      ],
+      "steps": [
+        "<code>const int LED_PIN = 13;</code> da un nombre legible al pin.",
+        "En <code>setup()</code>, <code>pinMode(LED_PIN, OUTPUT)</code> prepara el pin para suministrar corriente.",
+        "<code>digitalWrite(LED_PIN, HIGH)</code> enciende el LED y <code>delay(500)</code> espera medio segundo.",
+        "Se apaga con <code>LOW</code>, se vuelve a esperar… y <code>loop()</code> empieza de nuevo. ¡Cambia <code>500</code> para acelerarlo!"
+      ],
+      "specs": [
+        [
+          "LED",
+          "5 mm, rojo"
+        ],
+        [
+          "Tensión directa",
+          "≈ 2 V"
+        ],
+        [
+          "Corriente",
+          "≈ 14 mA"
+        ],
+        [
+          "Resistencia",
+          "220 Ω"
+        ],
+        [
+          "Periodo",
+          "1 s (500 ms + 500 ms)"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Los orificios de cada fila corta de cinco están conectados por debajo."
+        ],
+        [
+          "resistor",
+          "Resistencia de 220 Ω",
+          "Limita la corriente que recorre el circuito."
+        ],
+        [
+          "led",
+          "LED de 5 mm",
+          "Se ilumina cuando la corriente va de la pata larga (ánodo) a la corta."
+        ]
+      ],
+      "tags": [
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "resistor",
+          "Resistencia"
+        ],
+        [
+          "pin13",
+          "Pin 13"
+        ],
+        [
+          "gnd",
+          "GND"
+        ],
+        [
+          "ledL",
+          "LED integrado"
+        ]
+      ],
+      "challenge": {
+        "title": "Doble velocidad",
+        "goal": "Haz que el LED parpadee al menos el doble de rápido: encendido 200 ms o menos.",
+        "hint": "Reduce los dos valores de <code>delay(500)</code>."
+      }
+    },
+    "ar": {
+      "title": "اجعل مصباح LED يومض",
+      "subtitle": "دارتك الأولى",
+      "heading": "اجعل مصباح LED يومض",
+      "lede": "دارتك الأولى: مصباح LED ومقاومة على لوحة تجارب، يتحكم بهما المنفذ 13. تشغيل المنفذ وإطفاؤه مع فترة انتظار بينهما يجعل المصباح يومض.",
+      "features": [
+        [
+          "out",
+          "مخرج رقمي باستخدام <code>digitalWrite()</code>"
+        ],
+        [
+          "res",
+          "تحمي المقاومة المصباح من التيار الزائد"
+        ],
+        [
+          "clock",
+          "تضبط <code>delay()</code> إيقاع الوميض"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#e0a33a",
+          "D13",
+          "مصعد المصباح",
+          "عبر المقاومة 220 أوم."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "مهبط المصباح",
+          "الساق القصيرة تتصل بالأرضي."
+        ]
+      ],
+      "steps": [
+        "يعطي <code>const int LED_PIN = 13;</code> المنفذ اسمًا واضحًا.",
+        "في <code>setup()</code> يُهيّئ <code>pinMode(LED_PIN, OUTPUT)</code> المنفذ لإمداد التيار.",
+        "يضيء <code>digitalWrite(LED_PIN, HIGH)</code> المصباح، وينتظر <code>delay(500)</code> نصف ثانية.",
+        "نطفئه بـ <code>LOW</code> وننتظر مجددًا… ثم تبدأ <code>loop()</code> من جديد. غيّر <code>500</code> لتسريع الوميض!"
+      ],
+      "specs": [
+        [
+          "المصباح",
+          "5 مم، أحمر"
+        ],
+        [
+          "الجهد الأمامي",
+          "≈ 2 فولت"
+        ],
+        [
+          "التيار",
+          "≈ 14 ملي أمبير"
+        ],
+        [
+          "المقاومة",
+          "220 أوم"
+        ],
+        [
+          "الدورة",
+          "ثانية واحدة (500 + 500 ملي ثانية)"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "ثقوب كل صف قصير من خمسة متصلة من الأسفل."
+        ],
+        [
+          "resistor",
+          "مقاومة 220 أوم",
+          "تحدّ من التيار المار في الدارة."
+        ],
+        [
+          "led",
+          "مصباح LED قياس 5 مم",
+          "يضيء عندما يمر التيار من الساق الطويلة (المصعد) إلى القصيرة."
+        ]
+      ],
+      "tags": [
+        [
+          "led",
+          "المصباح"
+        ],
+        [
+          "resistor",
+          "المقاومة"
+        ],
+        [
+          "pin13",
+          "المنفذ 13"
+        ],
+        [
+          "gnd",
+          "GND"
+        ],
+        [
+          "ledL",
+          "المصباح المدمج"
+        ]
+      ],
+      "challenge": {
+        "title": "ضعف السرعة",
+        "goal": "اجعل المصباح يومض بسرعة مضاعفة على الأقل: يضيء لمدة 200 ملي ثانية أو أقل.",
+        "hint": "خفّض قيمتي <code>delay(500)</code>."
+      }
+    }
+  },
+  {
+    "slug": "button",
+    "position": 3,
+    "category": "basics",
+    "code": "const int BUTTON_PIN = 2;\nconst int LED_PIN = 13;\n\nvoid setup() {\n  pinMode(BUTTON_PIN, INPUT_PULLUP);\n  pinMode(LED_PIN, OUTPUT);\n}\n\nvoid loop() {\n  if (digitalRead(BUTTON_PIN) == LOW) {\n    digitalWrite(LED_PIN, HIGH);\n  } else {\n    digitalWrite(LED_PIN, LOW);\n  }\n}",
+    "en": {
+      "title": "Press a button",
+      "subtitle": "Read a digital input",
+      "heading": "Press a button",
+      "lede": "A push button connects pin 2 to ground when pressed. The board reads that state and lights the LED for as long as the button is held.",
+      "features": [
+        [
+          "in",
+          "Digital input with <code>digitalRead()</code>"
+        ],
+        [
+          "hand",
+          "Click and hold the button in the 3D view"
+        ],
+        [
+          "branch",
+          "A decision with <code>if / else</code>"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2",
+          "Button",
+          "Internal pull-up enabled."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "Through the 220 Ω resistor."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Button + LED",
+          "Shared return."
+        ]
+      ],
+      "steps": [
+        "<code>INPUT_PULLUP</code> turns on an internal resistor: the pin reads <code>HIGH</code> at rest.",
+        "Pressing connects the pin to GND, so it reads <code>LOW</code>.",
+        "<code>if (digitalRead(BUTTON_PIN) == LOW)</code> checks for a press and lights the LED.",
+        "Otherwise <code>else</code> turns it off. The loop re-reads the button thousands of times a second."
+      ],
+      "specs": [
+        [
+          "Button",
+          "12 mm push button"
+        ],
+        [
+          "Mode",
+          "INPUT_PULLUP"
+        ],
+        [
+          "Internal pull-up",
+          "≈ 20–50 kΩ"
+        ],
+        [
+          "Logic",
+          "Pressed = LOW"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "button",
+          "Push button",
+          "Closes the circuit while pressed."
+        ],
+        [
+          "resistor",
+          "220 Ω resistor",
+          "Protects the LED."
+        ],
+        [
+          "led",
+          "5 mm LED",
+          "Shows the button state."
+        ]
+      ],
+      "tags": [
+        [
+          "button",
+          "Button"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "pin2",
+          "Pin 2"
+        ],
+        [
+          "pin13",
+          "Pin 13"
+        ]
+      ],
+      "hint": "Click and hold the button",
+      "challenge": {
+        "title": "Opposite day",
+        "goal": "Invert the logic: the LED stays on while the button is released and turns off while you press it.",
+        "hint": "Swap <code>HIGH</code> and <code>LOW</code> in the two <code>digitalWrite()</code> calls."
+      }
+    },
+    "fr": {
+      "title": "Appuyer sur un bouton",
+      "subtitle": "Lire une entrée numérique",
+      "heading": "Appuyer sur un bouton",
+      "lede": "Un bouton-poussoir relie la broche 2 à la masse quand on appuie. La carte lit cet état et allume la LED tant que le bouton est enfoncé.",
+      "features": [
+        [
+          "in",
+          "Entrée numérique avec <code>digitalRead()</code>"
+        ],
+        [
+          "hand",
+          "Cliquez et maintenez le bouton dans la vue 3D"
+        ],
+        [
+          "branch",
+          "Une décision avec <code>if / else</code>"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2",
+          "Bouton",
+          "Résistance de tirage interne activée."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "Via la résistance de 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Bouton + LED",
+          "Retour commun."
+        ]
+      ],
+      "steps": [
+        "<code>INPUT_PULLUP</code> active une résistance interne : la broche lit <code>HIGH</code> au repos.",
+        "Quand on appuie, le bouton relie la broche à GND : elle lit <code>LOW</code>.",
+        "<code>if (digitalRead(BUTTON_PIN) == LOW)</code> teste l’appui et allume la LED.",
+        "Sinon, <code>else</code> l’éteint. La boucle relit le bouton des milliers de fois par seconde."
+      ],
+      "specs": [
+        [
+          "Bouton",
+          "Poussoir 12 mm"
+        ],
+        [
+          "Mode",
+          "INPUT_PULLUP"
+        ],
+        [
+          "Pull-up interne",
+          "≈ 20–50 kΩ"
+        ],
+        [
+          "Logique",
+          "Appuyé = LOW"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "button",
+          "Bouton-poussoir",
+          "Ferme le circuit tant qu’on appuie dessus."
+        ],
+        [
+          "resistor",
+          "Résistance de 220 Ω",
+          "Protège la LED."
+        ],
+        [
+          "led",
+          "LED 5 mm",
+          "Indique l’état du bouton."
+        ]
+      ],
+      "tags": [
+        [
+          "button",
+          "Bouton"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "pin2",
+          "Broche 2"
+        ],
+        [
+          "pin13",
+          "Broche 13"
+        ]
+      ],
+      "hint": "Cliquez et maintenez le bouton",
+      "challenge": {
+        "title": "Le monde à l’envers",
+        "goal": "Inversez la logique : la LED reste allumée quand le bouton est relâché et s’éteint quand on appuie.",
+        "hint": "Échangez <code>HIGH</code> et <code>LOW</code> dans les deux <code>digitalWrite()</code>."
+      }
+    },
+    "es": {
+      "title": "Pulsar un botón",
+      "subtitle": "Leer una entrada digital",
+      "heading": "Pulsar un botón",
+      "lede": "Un pulsador conecta el pin 2 a tierra cuando se presiona. La placa lee ese estado y enciende el LED mientras el botón está pulsado.",
+      "features": [
+        [
+          "in",
+          "Entrada digital con <code>digitalRead()</code>"
+        ],
+        [
+          "hand",
+          "Haz clic y mantén el botón en la vista 3D"
+        ],
+        [
+          "branch",
+          "Una decisión con <code>if / else</code>"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2",
+          "Botón",
+          "Resistencia pull-up interna activada."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "A través de la resistencia de 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Botón + LED",
+          "Retorno común."
+        ]
+      ],
+      "steps": [
+        "<code>INPUT_PULLUP</code> activa una resistencia interna: el pin lee <code>HIGH</code> en reposo.",
+        "Al pulsar, el botón conecta el pin a GND y lee <code>LOW</code>.",
+        "<code>if (digitalRead(BUTTON_PIN) == LOW)</code> detecta la pulsación y enciende el LED.",
+        "Si no, <code>else</code> lo apaga. El bucle relee el botón miles de veces por segundo."
+      ],
+      "specs": [
+        [
+          "Botón",
+          "Pulsador de 12 mm"
+        ],
+        [
+          "Modo",
+          "INPUT_PULLUP"
+        ],
+        [
+          "Pull-up interna",
+          "≈ 20–50 kΩ"
+        ],
+        [
+          "Lógica",
+          "Pulsado = LOW"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "button",
+          "Pulsador",
+          "Cierra el circuito mientras se mantiene pulsado."
+        ],
+        [
+          "resistor",
+          "Resistencia de 220 Ω",
+          "Protege el LED."
+        ],
+        [
+          "led",
+          "LED de 5 mm",
+          "Muestra el estado del botón."
+        ]
+      ],
+      "tags": [
+        [
+          "button",
+          "Botón"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "pin2",
+          "Pin 2"
+        ],
+        [
+          "pin13",
+          "Pin 13"
+        ]
+      ],
+      "hint": "Haz clic y mantén el botón",
+      "challenge": {
+        "title": "El mundo al revés",
+        "goal": "Invierte la lógica: el LED queda encendido con el botón suelto y se apaga al pulsarlo.",
+        "hint": "Intercambia <code>HIGH</code> y <code>LOW</code> en las dos llamadas a <code>digitalWrite()</code>."
+      }
+    },
+    "ar": {
+      "title": "اضغط على زر",
+      "subtitle": "قراءة مدخل رقمي",
+      "heading": "اضغط على زر",
+      "lede": "يصل زر الضغط المنفذ 2 بالأرضي عند الضغط عليه. تقرأ اللوحة هذه الحالة وتضيء المصباح طالما بقي الزر مضغوطًا.",
+      "features": [
+        [
+          "in",
+          "مدخل رقمي باستخدام <code>digitalRead()</code>"
+        ],
+        [
+          "hand",
+          "انقر مع الاستمرار على الزر في العرض ثلاثي الأبعاد"
+        ],
+        [
+          "branch",
+          "اتخاذ قرار باستخدام <code>if / else</code>"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2",
+          "الزر",
+          "مقاومة الرفع الداخلية مفعّلة."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "المصباح",
+          "عبر المقاومة 220 أوم."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "الزر + المصباح",
+          "عودة مشتركة."
+        ]
+      ],
+      "steps": [
+        "يفعّل <code>INPUT_PULLUP</code> مقاومة داخلية: يقرأ المنفذ <code>HIGH</code> في حالة الراحة.",
+        "عند الضغط يصل الزر المنفذ بـ GND فيقرأ <code>LOW</code>.",
+        "يتحقق <code>if (digitalRead(BUTTON_PIN) == LOW)</code> من الضغط ويضيء المصباح.",
+        "وإلا فإن <code>else</code> يطفئه. تعيد الحلقة قراءة الزر آلاف المرات في الثانية."
+      ],
+      "specs": [
+        [
+          "الزر",
+          "زر ضغط 12 مم"
+        ],
+        [
+          "الوضع",
+          "INPUT_PULLUP"
+        ],
+        [
+          "مقاومة الرفع الداخلية",
+          "≈ 20–50 كيلو أوم"
+        ],
+        [
+          "المنطق",
+          "مضغوط = LOW"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "button",
+          "زر ضغط",
+          "يغلق الدارة طالما هو مضغوط."
+        ],
+        [
+          "resistor",
+          "مقاومة 220 أوم",
+          "تحمي المصباح."
+        ],
+        [
+          "led",
+          "مصباح LED قياس 5 مم",
+          "يُظهر حالة الزر."
+        ]
+      ],
+      "tags": [
+        [
+          "button",
+          "الزر"
+        ],
+        [
+          "led",
+          "المصباح"
+        ],
+        [
+          "pin2",
+          "المنفذ 2"
+        ],
+        [
+          "pin13",
+          "المنفذ 13"
+        ]
+      ],
+      "hint": "انقر مع الاستمرار على الزر",
+      "challenge": {
+        "title": "العالم المقلوب",
+        "goal": "اعكس المنطق: يبقى المصباح مضاءً عندما يكون الزر محرّرًا وينطفئ عند الضغط عليه.",
+        "hint": "بدّل <code>HIGH</code> و<code>LOW</code> في استدعاءَي <code>digitalWrite()</code>."
+      }
+    }
+  },
+  {
+    "slug": "knob",
+    "position": 4,
+    "category": "basics",
+    "code": "const int POT_PIN = A0;\nconst int LED_PIN = 9;\n\nvoid setup() {\n  pinMode(LED_PIN, OUTPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int value = analogRead(POT_PIN);\n  int brightness = map(value, 0, 1023, 0, 255);\n  analogWrite(LED_PIN, brightness);\n  Serial.println(value);\n  delay(100);\n}",
+    "en": {
+      "title": "Turn a knob",
+      "subtitle": "Read an analog value",
+      "heading": "Turn a knob",
+      "lede": "A potentiometer is an adjustable voltage divider. The board reads its position on A0 and sets the LED brightness with PWM on pin 9.",
+      "features": [
+        [
+          "wave",
+          "Analog input with <code>analogRead()</code>"
+        ],
+        [
+          "knob",
+          "Drag the potentiometer knob"
+        ],
+        [
+          "pwm",
+          "Variable brightness with <code>analogWrite()</code>"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Pot wiper",
+          "0 to 5 V depending on position."
+        ],
+        [
+          "#2a56a3",
+          "D9 ~",
+          "LED",
+          "PWM output."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Potentiometer",
+          "One end."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Pot + LED",
+          "Other end and return."
+        ]
+      ],
+      "steps": [
+        "<code>analogRead(POT_PIN)</code> returns a number from 0 to 1023.",
+        "<code>map(value, 0, 1023, 0, 255)</code> converts it to the PWM scale.",
+        "<code>analogWrite(LED_PIN, brightness)</code> dims or brightens the LED.",
+        "<code>Serial.println(value)</code> prints the reading to the serial monitor."
+      ],
+      "specs": [
+        [
+          "Potentiometer",
+          "10 kΩ linear"
+        ],
+        [
+          "ADC resolution",
+          "10-bit (0–1023)"
+        ],
+        [
+          "PWM",
+          "8-bit (0–255), ≈ 490 Hz"
+        ],
+        [
+          "Serial speed",
+          "9600 baud"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "pot",
+          "10 kΩ potentiometer",
+          "Its middle pin outputs an adjustable voltage."
+        ],
+        [
+          "resistor",
+          "220 Ω resistor",
+          "Protects the LED."
+        ],
+        [
+          "led",
+          "5 mm LED",
+          "Its brightness follows the knob."
+        ]
+      ],
+      "tags": [
+        [
+          "pot",
+          "Potentiometer"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "a0",
+          "A0"
+        ],
+        [
+          "pin9",
+          "Pin 9"
+        ]
+      ],
+      "hint": "Drag the potentiometer",
+      "challenge": {
+        "title": "Speak percent",
+        "goal": "Print the knob position as a percentage, for example <code>57%</code>.",
+        "hint": "Use <code>map(value, 0, 1023, 0, 100)</code>, then <code>Serial.print()</code> the number followed by <code>Serial.println(\"%\")</code>."
+      }
+    },
+    "fr": {
+      "title": "Tourner un potentiomètre",
+      "subtitle": "Lire une valeur analogique",
+      "heading": "Tourner un potentiomètre",
+      "lede": "Le potentiomètre est un diviseur de tension réglable. La carte lit sa position sur A0 et règle la luminosité de la LED en PWM sur la broche 9.",
+      "features": [
+        [
+          "wave",
+          "Entrée analogique avec <code>analogRead()</code>"
+        ],
+        [
+          "knob",
+          "Faites glisser le bouton du potentiomètre"
+        ],
+        [
+          "pwm",
+          "Luminosité variable avec <code>analogWrite()</code>"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Curseur du potentiomètre",
+          "0 à 5 V selon la position."
+        ],
+        [
+          "#2a56a3",
+          "D9 ~",
+          "LED",
+          "Sortie PWM."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Potentiomètre",
+          "Une extrémité."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Potentiomètre + LED",
+          "Autre extrémité et retour."
+        ]
+      ],
+      "steps": [
+        "<code>analogRead(POT_PIN)</code> renvoie un nombre entre 0 et 1023.",
+        "<code>map(value, 0, 1023, 0, 255)</code> le convertit vers l’échelle du PWM.",
+        "<code>analogWrite(LED_PIN, brightness)</code> fait varier la luminosité.",
+        "<code>Serial.println(value)</code> affiche la mesure dans le moniteur série."
+      ],
+      "specs": [
+        [
+          "Potentiomètre",
+          "10 kΩ linéaire"
+        ],
+        [
+          "Résolution ADC",
+          "10 bits (0–1023)"
+        ],
+        [
+          "PWM",
+          "8 bits (0–255), ≈ 490 Hz"
+        ],
+        [
+          "Vitesse série",
+          "9600 bauds"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "pot",
+          "Potentiomètre 10 kΩ",
+          "Sa broche centrale délivre une tension réglable."
+        ],
+        [
+          "resistor",
+          "Résistance de 220 Ω",
+          "Protège la LED."
+        ],
+        [
+          "led",
+          "LED 5 mm",
+          "Sa luminosité suit le potentiomètre."
+        ]
+      ],
+      "tags": [
+        [
+          "pot",
+          "Potentiomètre"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "a0",
+          "A0"
+        ],
+        [
+          "pin9",
+          "Broche 9"
+        ]
+      ],
+      "hint": "Faites glisser le potentiomètre",
+      "challenge": {
+        "title": "Parlez en pourcentage",
+        "goal": "Affichez la position du potentiomètre en pourcentage, par exemple <code>57%</code>.",
+        "hint": "Utilisez <code>map(value, 0, 1023, 0, 100)</code>, puis <code>Serial.print()</code> le nombre suivi de <code>Serial.println(\"%\")</code>."
+      }
+    },
+    "es": {
+      "title": "Girar un potenciómetro",
+      "subtitle": "Leer un valor analógico",
+      "heading": "Girar un potenciómetro",
+      "lede": "El potenciómetro es un divisor de tensión ajustable. La placa lee su posición en A0 y regula el brillo del LED con PWM en el pin 9.",
+      "features": [
+        [
+          "wave",
+          "Entrada analógica con <code>analogRead()</code>"
+        ],
+        [
+          "knob",
+          "Arrastra el mando del potenciómetro"
+        ],
+        [
+          "pwm",
+          "Brillo variable con <code>analogWrite()</code>"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Cursor del potenciómetro",
+          "De 0 a 5 V según la posición."
+        ],
+        [
+          "#2a56a3",
+          "D9 ~",
+          "LED",
+          "Salida PWM."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Potenciómetro",
+          "Un extremo."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Potenciómetro + LED",
+          "El otro extremo y retorno."
+        ]
+      ],
+      "steps": [
+        "<code>analogRead(POT_PIN)</code> devuelve un número entre 0 y 1023.",
+        "<code>map(value, 0, 1023, 0, 255)</code> lo convierte a la escala del PWM.",
+        "<code>analogWrite(LED_PIN, brightness)</code> varía el brillo del LED.",
+        "<code>Serial.println(value)</code> muestra la lectura en el monitor serie."
+      ],
+      "specs": [
+        [
+          "Potenciómetro",
+          "10 kΩ lineal"
+        ],
+        [
+          "Resolución ADC",
+          "10 bits (0–1023)"
+        ],
+        [
+          "PWM",
+          "8 bits (0–255), ≈ 490 Hz"
+        ],
+        [
+          "Velocidad serie",
+          "9600 baudios"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "pot",
+          "Potenciómetro de 10 kΩ",
+          "Su pin central entrega una tensión ajustable."
+        ],
+        [
+          "resistor",
+          "Resistencia de 220 Ω",
+          "Protege el LED."
+        ],
+        [
+          "led",
+          "LED de 5 mm",
+          "Su brillo sigue al potenciómetro."
+        ]
+      ],
+      "tags": [
+        [
+          "pot",
+          "Potenciómetro"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "a0",
+          "A0"
+        ],
+        [
+          "pin9",
+          "Pin 9"
+        ]
+      ],
+      "hint": "Arrastra el potenciómetro",
+      "challenge": {
+        "title": "Habla en porcentaje",
+        "goal": "Muestra la posición del potenciómetro en porcentaje, por ejemplo <code>57%</code>.",
+        "hint": "Usa <code>map(value, 0, 1023, 0, 100)</code> y luego <code>Serial.print()</code> del número seguido de <code>Serial.println(\"%\")</code>."
+      }
+    },
+    "ar": {
+      "title": "أدِر مقياس الجهد",
+      "subtitle": "قراءة قيمة تناظرية",
+      "heading": "أدِر مقياس الجهد",
+      "lede": "مقياس الجهد مقسّم جهد قابل للضبط. تقرأ اللوحة موضعه على A0 وتضبط سطوع المصباح عبر PWM على المنفذ 9.",
+      "features": [
+        [
+          "wave",
+          "مدخل تناظري باستخدام <code>analogRead()</code>"
+        ],
+        [
+          "knob",
+          "اسحب مقبض مقياس الجهد"
+        ],
+        [
+          "pwm",
+          "سطوع متغير باستخدام <code>analogWrite()</code>"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "الطرف الأوسط لمقياس الجهد",
+          "من 0 إلى 5 فولت حسب الموضع."
+        ],
+        [
+          "#2a56a3",
+          "D9 ~",
+          "المصباح",
+          "مخرج PWM."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "مقياس الجهد",
+          "أحد الطرفين."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "مقياس الجهد + المصباح",
+          "الطرف الآخر والعودة."
+        ]
+      ],
+      "steps": [
+        "يعيد <code>analogRead(POT_PIN)</code> رقمًا بين 0 و1023.",
+        "يحوّله <code>map(value, 0, 1023, 0, 255)</code> إلى مقياس PWM.",
+        "يغيّر <code>analogWrite(LED_PIN, brightness)</code> سطوع المصباح.",
+        "يعرض <code>Serial.println(value)</code> القراءة في الشاشة التسلسلية."
+      ],
+      "specs": [
+        [
+          "مقياس الجهد",
+          "10 كيلو أوم خطي"
+        ],
+        [
+          "دقة المحول التناظري",
+          "10 بت (0–1023)"
+        ],
+        [
+          "PWM",
+          "8 بت (0–255)، ≈ 490 هرتز"
+        ],
+        [
+          "سرعة الاتصال التسلسلي",
+          "9600 باود"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "pot",
+          "مقياس جهد 10 كيلو أوم",
+          "يعطي طرفه الأوسط جهدًا قابلًا للضبط."
+        ],
+        [
+          "resistor",
+          "مقاومة 220 أوم",
+          "تحمي المصباح."
+        ],
+        [
+          "led",
+          "مصباح LED قياس 5 مم",
+          "يتبع سطوعه مقياس الجهد."
+        ]
+      ],
+      "tags": [
+        [
+          "pot",
+          "مقياس الجهد"
+        ],
+        [
+          "led",
+          "المصباح"
+        ],
+        [
+          "a0",
+          "A0"
+        ],
+        [
+          "pin9",
+          "المنفذ 9"
+        ]
+      ],
+      "hint": "اسحب مقياس الجهد",
+      "challenge": {
+        "title": "تحدّث بالنسبة المئوية",
+        "goal": "اطبع موضع مقياس الجهد كنسبة مئوية، مثل <code>57%</code>.",
+        "hint": "استخدم <code>map(value, 0, 1023, 0, 100)</code> ثم اطبع الرقم بـ <code>Serial.print()</code> يليه <code>Serial.println(\"%\")</code>."
+      }
+    }
+  },
+  {
+    "slug": "rgb",
+    "position": 5,
+    "category": "basics",
+    "code": "const int RED = 9;\nconst int GREEN = 10;\nconst int BLUE = 11;\n\nvoid setColor(int r, int g, int b) {\n  analogWrite(RED, r);\n  analogWrite(GREEN, g);\n  analogWrite(BLUE, b);\n}\n\nvoid setup() {}\n\nvoid loop() {\n  setColor(255, 0, 0);\n  delay(800);\n  setColor(0, 255, 0);\n  delay(800);\n  setColor(0, 0, 255);\n  delay(800);\n  setColor(255, 160, 0);\n  delay(800);\n}",
+    "en": {
+      "title": "Mix colours",
+      "subtitle": "RGB LED and PWM",
+      "heading": "Mix colours",
+      "lede": "An RGB LED packs three LEDs — red, green and blue — in one body. Dosing each with PWM lets you make almost any colour.",
+      "features": [
+        [
+          "pwm",
+          "Three PWM outputs: 9, 10 and 11"
+        ],
+        [
+          "fn",
+          "Your own function: <code>setColor()</code>"
+        ],
+        [
+          "palette",
+          "Additive light mixing"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#d64a3a",
+          "D9 ~",
+          "Red",
+          "Through 220 Ω."
+        ],
+        [
+          "#2f9e5a",
+          "D10 ~",
+          "Green",
+          "Through 220 Ω."
+        ],
+        [
+          "#2a56a3",
+          "D11 ~",
+          "Blue",
+          "Through 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Common cathode",
+          "The longest leg."
+        ]
+      ],
+      "steps": [
+        "<code>setColor(r, g, b)</code> wraps three <code>analogWrite()</code> calls into one.",
+        "Each value goes from 0 (off) to 255 (full power).",
+        "<code>setColor(255, 160, 0)</code> mixes red and green into orange.",
+        "Try your own values in the editor, then run again!"
+      ],
+      "specs": [
+        [
+          "LED",
+          "5 mm RGB, common cathode"
+        ],
+        [
+          "Resistors",
+          "3 × 220 Ω"
+        ],
+        [
+          "Possible colours",
+          "256³ ≈ 16.7 million"
+        ],
+        [
+          "Pins",
+          "9, 10, 11 (PWM)"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "rgb",
+          "RGB LED",
+          "Three LEDs sharing one cathode."
+        ],
+        [
+          "resistor",
+          "220 Ω resistors",
+          "One per colour."
+        ]
+      ],
+      "tags": [
+        [
+          "rgb",
+          "RGB LED"
+        ],
+        [
+          "pin9",
+          "Red 9"
+        ],
+        [
+          "pin10",
+          "Green 10"
+        ],
+        [
+          "pin11",
+          "Blue 11"
+        ]
+      ],
+      "challenge": {
+        "title": "Royal purple",
+        "goal": "Light the RGB LED in purple: red and blue on, green off.",
+        "hint": "Add <code>setColor(255, 0, 255);</code> with a <code>delay()</code> in the loop."
+      }
+    },
+    "fr": {
+      "title": "Mélanger les couleurs",
+      "subtitle": "LED RVB et PWM",
+      "heading": "Mélanger les couleurs",
+      "lede": "Une LED RVB contient trois LED — rouge, verte et bleue — dans un même boîtier. En dosant chacune en PWM, on obtient presque toutes les couleurs.",
+      "features": [
+        [
+          "pwm",
+          "Trois sorties PWM : 9, 10 et 11"
+        ],
+        [
+          "fn",
+          "Une fonction maison : <code>setColor()</code>"
+        ],
+        [
+          "palette",
+          "Mélange additif de la lumière"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#d64a3a",
+          "D9 ~",
+          "Rouge",
+          "Via 220 Ω."
+        ],
+        [
+          "#2f9e5a",
+          "D10 ~",
+          "Vert",
+          "Via 220 Ω."
+        ],
+        [
+          "#2a56a3",
+          "D11 ~",
+          "Bleu",
+          "Via 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Cathode commune",
+          "La patte la plus longue."
+        ]
+      ],
+      "steps": [
+        "<code>setColor(r, g, b)</code> regroupe trois <code>analogWrite()</code> en un seul appel.",
+        "Chaque valeur va de 0 (éteint) à 255 (pleine puissance).",
+        "<code>setColor(255, 160, 0)</code> mélange rouge et vert : on obtient de l’orange.",
+        "Essayez vos propres valeurs dans l’éditeur, puis relancez !"
+      ],
+      "specs": [
+        [
+          "LED",
+          "RVB 5 mm, cathode commune"
+        ],
+        [
+          "Résistances",
+          "3 × 220 Ω"
+        ],
+        [
+          "Couleurs possibles",
+          "256³ ≈ 16,7 millions"
+        ],
+        [
+          "Broches",
+          "9, 10, 11 (PWM)"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "rgb",
+          "LED RVB",
+          "Trois LED et une cathode commune."
+        ],
+        [
+          "resistor",
+          "Résistances de 220 Ω",
+          "Une par couleur."
+        ]
+      ],
+      "tags": [
+        [
+          "rgb",
+          "LED RVB"
+        ],
+        [
+          "pin9",
+          "Rouge 9"
+        ],
+        [
+          "pin10",
+          "Vert 10"
+        ],
+        [
+          "pin11",
+          "Bleu 11"
+        ]
+      ],
+      "challenge": {
+        "title": "Violet royal",
+        "goal": "Allumez la LED RVB en violet : rouge et bleu allumés, vert éteint.",
+        "hint": "Ajoutez <code>setColor(255, 0, 255);</code> avec un <code>delay()</code> dans la boucle."
+      }
+    },
+    "es": {
+      "title": "Mezclar colores",
+      "subtitle": "LED RGB y PWM",
+      "heading": "Mezclar colores",
+      "lede": "Un LED RGB contiene tres LED —rojo, verde y azul— en un mismo encapsulado. Dosificando cada uno con PWM se obtiene casi cualquier color.",
+      "features": [
+        [
+          "pwm",
+          "Tres salidas PWM: 9, 10 y 11"
+        ],
+        [
+          "fn",
+          "Una función propia: <code>setColor()</code>"
+        ],
+        [
+          "palette",
+          "Mezcla aditiva de la luz"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#d64a3a",
+          "D9 ~",
+          "Rojo",
+          "A través de 220 Ω."
+        ],
+        [
+          "#2f9e5a",
+          "D10 ~",
+          "Verde",
+          "A través de 220 Ω."
+        ],
+        [
+          "#2a56a3",
+          "D11 ~",
+          "Azul",
+          "A través de 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Cátodo común",
+          "La pata más larga."
+        ]
+      ],
+      "steps": [
+        "<code>setColor(r, g, b)</code> agrupa tres <code>analogWrite()</code> en una sola llamada.",
+        "Cada valor va de 0 (apagado) a 255 (máxima potencia).",
+        "<code>setColor(255, 160, 0)</code> mezcla rojo y verde: se obtiene naranja.",
+        "Prueba tus propios valores en el editor y vuelve a ejecutar."
+      ],
+      "specs": [
+        [
+          "LED",
+          "RGB de 5 mm, cátodo común"
+        ],
+        [
+          "Resistencias",
+          "3 × 220 Ω"
+        ],
+        [
+          "Colores posibles",
+          "256³ ≈ 16,7 millones"
+        ],
+        [
+          "Pines",
+          "9, 10, 11 (PWM)"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "rgb",
+          "LED RGB",
+          "Tres LED que comparten un cátodo."
+        ],
+        [
+          "resistor",
+          "Resistencias de 220 Ω",
+          "Una por color."
+        ]
+      ],
+      "tags": [
+        [
+          "rgb",
+          "LED RGB"
+        ],
+        [
+          "pin9",
+          "Rojo 9"
+        ],
+        [
+          "pin10",
+          "Verde 10"
+        ],
+        [
+          "pin11",
+          "Azul 11"
+        ]
+      ],
+      "challenge": {
+        "title": "Púrpura real",
+        "goal": "Enciende el LED RGB en púrpura: rojo y azul encendidos, verde apagado.",
+        "hint": "Añade <code>setColor(255, 0, 255);</code> con un <code>delay()</code> en el bucle."
+      }
+    },
+    "ar": {
+      "title": "امزج الألوان",
+      "subtitle": "مصباح RGB وتقنية PWM",
+      "heading": "امزج الألوان",
+      "lede": "يحتوي مصباح RGB على ثلاثة مصابيح —أحمر وأخضر وأزرق— في غلاف واحد. بضبط كل منها عبر PWM يمكنك الحصول على أي لون تقريبًا.",
+      "features": [
+        [
+          "pwm",
+          "ثلاثة مخارج PWM: ‏9 و10 و11"
+        ],
+        [
+          "fn",
+          "دالة خاصة بك: <code>setColor()</code>"
+        ],
+        [
+          "palette",
+          "المزج الضوئي الإضافي"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#d64a3a",
+          "D9 ~",
+          "الأحمر",
+          "عبر 220 أوم."
+        ],
+        [
+          "#2f9e5a",
+          "D10 ~",
+          "الأخضر",
+          "عبر 220 أوم."
+        ],
+        [
+          "#2a56a3",
+          "D11 ~",
+          "الأزرق",
+          "عبر 220 أوم."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "مهبط مشترك",
+          "الساق الأطول."
+        ]
+      ],
+      "steps": [
+        "تجمع <code>setColor(r, g, b)</code> ثلاثة استدعاءات لـ <code>analogWrite()</code> في استدعاء واحد.",
+        "تتراوح كل قيمة بين 0 (مطفأ) و255 (أقصى قدرة).",
+        "يمزج <code>setColor(255, 160, 0)</code> الأحمر والأخضر فنحصل على البرتقالي.",
+        "جرّب قيمك الخاصة في المحرر ثم شغّل من جديد!"
+      ],
+      "specs": [
+        [
+          "المصباح",
+          "RGB قياس 5 مم، مهبط مشترك"
+        ],
+        [
+          "المقاومات",
+          "3 × 220 أوم"
+        ],
+        [
+          "الألوان الممكنة",
+          "‏256³ ≈ 16.7 مليون"
+        ],
+        [
+          "المنافذ",
+          "9، 10، 11 (PWM)"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "rgb",
+          "مصباح RGB",
+          "ثلاثة مصابيح تتشارك مهبطًا واحدًا."
+        ],
+        [
+          "resistor",
+          "مقاومات 220 أوم",
+          "واحدة لكل لون."
+        ]
+      ],
+      "tags": [
+        [
+          "rgb",
+          "مصباح RGB"
+        ],
+        [
+          "pin9",
+          "أحمر 9"
+        ],
+        [
+          "pin10",
+          "أخضر 10"
+        ],
+        [
+          "pin11",
+          "أزرق 11"
+        ]
+      ],
+      "challenge": {
+        "title": "الأرجواني الملكي",
+        "goal": "أضئ مصباح RGB باللون الأرجواني: الأحمر والأزرق مضاءان والأخضر مطفأ.",
+        "hint": "أضف <code>setColor(255, 0, 255);</code> مع <code>delay()</code> داخل الحلقة."
+      }
+    }
+  },
+  {
+    "slug": "light",
+    "position": 6,
+    "category": "sensors",
+    "code": "const int LDR_PIN = A0;\nconst int LED_PIN = 13;\nconst int THRESHOLD = 400;\n\nvoid setup() {\n  pinMode(LED_PIN, OUTPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int light = analogRead(LDR_PIN);\n  Serial.println(light);\n  if (light < THRESHOLD) {\n    digitalWrite(LED_PIN, HIGH);\n  } else {\n    digitalWrite(LED_PIN, LOW);\n  }\n  delay(200);\n}",
+    "en": {
+      "title": "Sense light",
+      "subtitle": "An automatic night light",
+      "heading": "Sense light",
+      "lede": "A light-dependent resistor (LDR) changes value with light. Paired with a fixed resistor it forms a voltage divider read on A0: when it gets dark, the LED turns on.",
+      "features": [
+        [
+          "sun",
+          "A photoresistor on A0"
+        ],
+        [
+          "hand",
+          "Click the LDR to cover it with your hand"
+        ],
+        [
+          "branch",
+          "An adjustable <code>THRESHOLD</code>"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Divider midpoint",
+          "Between the LDR and the 10 kΩ."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Photoresistor",
+          "Top of the divider."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "Through 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "10 kΩ + LED",
+          "Bottom of the divider."
+        ]
+      ],
+      "steps": [
+        "More light lowers the LDR’s resistance and raises the voltage on A0.",
+        "<code>analogRead(LDR_PIN)</code> gives a value from 0 (dark) to 1023 (bright sun).",
+        "When it drops below <code>THRESHOLD</code>, the LED turns on like a night light.",
+        "Open the serial monitor to tune the threshold for your room."
+      ],
+      "specs": [
+        [
+          "Sensor",
+          "GL5528 photoresistor"
+        ],
+        [
+          "Resistance in light",
+          "≈ 10–20 kΩ"
+        ],
+        [
+          "Resistance in dark",
+          "≈ 1 MΩ"
+        ],
+        [
+          "Fixed resistor",
+          "10 kΩ"
+        ],
+        [
+          "Threshold",
+          "400 / 1023"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "ldr",
+          "Photoresistor",
+          "Its resistance drops as light increases."
+        ],
+        [
+          "resistor",
+          "10 kΩ resistor",
+          "Completes the voltage divider."
+        ],
+        [
+          "led",
+          "5 mm LED",
+          "The night light."
+        ]
+      ],
+      "tags": [
+        [
+          "ldr",
+          "Photoresistor"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "Click the LDR to cover it",
+      "challenge": {
+        "title": "Sunlight alarm",
+        "goal": "Reverse the night light: the LED turns on in the light and off when you cover the sensor.",
+        "hint": "Change <code>light &lt; THRESHOLD</code> into <code>light &gt; THRESHOLD</code>."
+      }
+    },
+    "fr": {
+      "title": "Détecter la lumière",
+      "subtitle": "Une veilleuse automatique",
+      "heading": "Détecter la lumière",
+      "lede": "Une photorésistance (LDR) change de valeur selon la lumière. Associée à une résistance fixe, elle forme un diviseur de tension lu sur A0 : quand il fait sombre, la LED s’allume.",
+      "features": [
+        [
+          "sun",
+          "Une photorésistance sur A0"
+        ],
+        [
+          "hand",
+          "Cliquez sur la LDR pour la couvrir de votre main"
+        ],
+        [
+          "branch",
+          "Un seuil réglable : <code>THRESHOLD</code>"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Point milieu",
+          "Entre la LDR et la 10 kΩ."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Photorésistance",
+          "Haut du diviseur."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "Via 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "10 kΩ + LED",
+          "Bas du diviseur."
+        ]
+      ],
+      "steps": [
+        "Plus il y a de lumière, plus la résistance de la LDR baisse et plus la tension sur A0 monte.",
+        "<code>analogRead(LDR_PIN)</code> donne une valeur entre 0 (noir) et 1023 (plein soleil).",
+        "Si la valeur passe sous <code>THRESHOLD</code>, la LED s’allume comme une veilleuse.",
+        "Ouvrez le moniteur série pour régler le seuil selon votre pièce."
+      ],
+      "specs": [
+        [
+          "Capteur",
+          "Photorésistance GL5528"
+        ],
+        [
+          "Résistance à la lumière",
+          "≈ 10–20 kΩ"
+        ],
+        [
+          "Résistance dans le noir",
+          "≈ 1 MΩ"
+        ],
+        [
+          "Résistance fixe",
+          "10 kΩ"
+        ],
+        [
+          "Seuil",
+          "400 / 1023"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "ldr",
+          "Photorésistance",
+          "Sa résistance baisse quand la lumière augmente."
+        ],
+        [
+          "resistor",
+          "Résistance de 10 kΩ",
+          "Complète le diviseur de tension."
+        ],
+        [
+          "led",
+          "LED 5 mm",
+          "La veilleuse."
+        ]
+      ],
+      "tags": [
+        [
+          "ldr",
+          "Photorésistance"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "Cliquez sur la LDR pour la couvrir",
+      "challenge": {
+        "title": "Alarme solaire",
+        "goal": "Inversez la veilleuse : la LED s’allume à la lumière et s’éteint quand vous couvrez le capteur.",
+        "hint": "Remplacez <code>light &lt; THRESHOLD</code> par <code>light &gt; THRESHOLD</code>."
+      }
+    },
+    "es": {
+      "title": "Detectar la luz",
+      "subtitle": "Una luz nocturna automática",
+      "heading": "Detectar la luz",
+      "lede": "Una fotorresistencia (LDR) cambia de valor según la luz. Junto a una resistencia fija forma un divisor de tensión leído en A0: cuando oscurece, el LED se enciende.",
+      "features": [
+        [
+          "sun",
+          "Una fotorresistencia en A0"
+        ],
+        [
+          "hand",
+          "Haz clic en la LDR para taparla con la mano"
+        ],
+        [
+          "branch",
+          "Un umbral ajustable: <code>THRESHOLD</code>"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Punto medio",
+          "Entre la LDR y la de 10 kΩ."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Fotorresistencia",
+          "Parte alta del divisor."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "A través de 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "10 kΩ + LED",
+          "Parte baja del divisor."
+        ]
+      ],
+      "steps": [
+        "Cuanta más luz, menor es la resistencia de la LDR y mayor la tensión en A0.",
+        "<code>analogRead(LDR_PIN)</code> da un valor entre 0 (oscuridad) y 1023 (pleno sol).",
+        "Si baja de <code>THRESHOLD</code>, el LED se enciende como una luz nocturna.",
+        "Abre el monitor serie para ajustar el umbral a tu habitación."
+      ],
+      "specs": [
+        [
+          "Sensor",
+          "Fotorresistencia GL5528"
+        ],
+        [
+          "Resistencia con luz",
+          "≈ 10–20 kΩ"
+        ],
+        [
+          "Resistencia a oscuras",
+          "≈ 1 MΩ"
+        ],
+        [
+          "Resistencia fija",
+          "10 kΩ"
+        ],
+        [
+          "Umbral",
+          "400 / 1023"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "ldr",
+          "Fotorresistencia",
+          "Su resistencia baja cuando aumenta la luz."
+        ],
+        [
+          "resistor",
+          "Resistencia de 10 kΩ",
+          "Completa el divisor de tensión."
+        ],
+        [
+          "led",
+          "LED de 5 mm",
+          "La luz nocturna."
+        ]
+      ],
+      "tags": [
+        [
+          "ldr",
+          "Fotorresistencia"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "Haz clic en la LDR para taparla",
+      "challenge": {
+        "title": "Alarma solar",
+        "goal": "Invierte la luz nocturna: el LED se enciende con luz y se apaga al tapar el sensor.",
+        "hint": "Cambia <code>light &lt; THRESHOLD</code> por <code>light &gt; THRESHOLD</code>."
+      }
+    },
+    "ar": {
+      "title": "استشعر الضوء",
+      "subtitle": "ضوء ليلي تلقائي",
+      "heading": "استشعر الضوء",
+      "lede": "تتغير قيمة المقاومة الضوئية (LDR) بحسب الضوء. ومع مقاومة ثابتة تشكّل مقسّم جهد يُقرأ على A0: عندما يحل الظلام يضيء المصباح.",
+      "features": [
+        [
+          "sun",
+          "مقاومة ضوئية على A0"
+        ],
+        [
+          "hand",
+          "انقر على المقاومة الضوئية لتغطيتها بيدك"
+        ],
+        [
+          "branch",
+          "عتبة قابلة للضبط: <code>THRESHOLD</code>"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "النقطة الوسطى",
+          "بين المقاومة الضوئية ومقاومة 10 كيلو أوم."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "المقاومة الضوئية",
+          "أعلى المقسّم."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "المصباح",
+          "عبر 220 أوم."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "10 كيلو أوم + المصباح",
+          "أسفل المقسّم."
+        ]
+      ],
+      "steps": [
+        "كلما زاد الضوء قلّت مقاومة LDR وارتفع الجهد على A0.",
+        "يعطي <code>analogRead(LDR_PIN)</code> قيمة بين 0 (ظلام) و1023 (شمس ساطعة).",
+        "إذا انخفضت القيمة عن <code>THRESHOLD</code> يضيء المصباح كضوء ليلي.",
+        "افتح الشاشة التسلسلية لضبط العتبة بما يناسب غرفتك."
+      ],
+      "specs": [
+        [
+          "المستشعر",
+          "مقاومة ضوئية GL5528"
+        ],
+        [
+          "المقاومة في الضوء",
+          "≈ 10–20 كيلو أوم"
+        ],
+        [
+          "المقاومة في الظلام",
+          "≈ 1 ميغا أوم"
+        ],
+        [
+          "المقاومة الثابتة",
+          "10 كيلو أوم"
+        ],
+        [
+          "العتبة",
+          "400 / 1023"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "ldr",
+          "مقاومة ضوئية",
+          "تنخفض مقاومتها كلما زاد الضوء."
+        ],
+        [
+          "resistor",
+          "مقاومة 10 كيلو أوم",
+          "تُكمل مقسّم الجهد."
+        ],
+        [
+          "led",
+          "مصباح LED قياس 5 مم",
+          "الضوء الليلي."
+        ]
+      ],
+      "tags": [
+        [
+          "ldr",
+          "المقاومة الضوئية"
+        ],
+        [
+          "led",
+          "المصباح"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "انقر على المقاومة الضوئية لتغطيتها",
+      "challenge": {
+        "title": "إنذار الشمس",
+        "goal": "اعكس الضوء الليلي: يضيء المصباح في الضوء وينطفئ عندما تغطي المستشعر.",
+        "hint": "غيّر <code>light &lt; THRESHOLD</code> إلى <code>light &gt; THRESHOLD</code>."
+      }
+    }
+  },
+  {
+    "slug": "sensor",
+    "position": 7,
+    "category": "sensors",
+    "code": "const int PIR_PIN = 2;\nconst int LED_PIN = 13;\n\nvoid setup() {\n  pinMode(PIR_PIN, INPUT);\n  pinMode(LED_PIN, OUTPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int motion = digitalRead(PIR_PIN);\n  digitalWrite(LED_PIN, motion);\n  if (motion == HIGH) {\n    Serial.println(\"Motion detected!\");\n  }\n  delay(250);\n}",
+    "en": {
+      "title": "Read a sensor",
+      "subtitle": "Motion detector",
+      "heading": "Read a sensor",
+      "lede": "A passive infrared (PIR) sensor spots the warmth of a moving body. It simply outputs HIGH: the board reads it like a button and prints an alert.",
+      "features": [
+        [
+          "eye",
+          "HC-SR501 PIR sensor"
+        ],
+        [
+          "hand",
+          "Click in front of the sensor to walk past"
+        ],
+        [
+          "term",
+          "Messages in the serial monitor"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2",
+          "PIR OUT",
+          "HIGH on detection."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "PIR VCC",
+          "Powers the module."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "Through 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "PIR + LED",
+          "Shared return."
+        ]
+      ],
+      "steps": [
+        "The PIR module does the hard work: it outputs <code>HIGH</code> when it sees motion.",
+        "<code>digitalRead(PIR_PIN)</code> reads it like any digital input.",
+        "<code>digitalWrite(LED_PIN, motion)</code> mirrors the state onto the LED.",
+        "<code>Serial.println(\"…\")</code> sends a text message to the computer."
+      ],
+      "specs": [
+        [
+          "Sensor",
+          "HC-SR501 PIR"
+        ],
+        [
+          "Range",
+          "up to 7 m"
+        ],
+        [
+          "Angle",
+          "≈ 110°"
+        ],
+        [
+          "Output",
+          "3.3 V digital"
+        ],
+        [
+          "Supply",
+          "5 V"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "pir",
+          "PIR sensor",
+          "Detects infrared from a moving body."
+        ],
+        [
+          "resistor",
+          "220 Ω resistor",
+          "Protects the LED."
+        ],
+        [
+          "led",
+          "5 mm LED",
+          "Lights on each detection."
+        ]
+      ],
+      "tags": [
+        [
+          "pir",
+          "PIR sensor"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "pin2",
+          "Pin 2"
+        ]
+      ],
+      "hint": "Click the sensor to walk past it",
+      "challenge": {
+        "title": "Visitor counter",
+        "goal": "Count the detections and print the running total, so the monitor shows 1, 2, 3…",
+        "hint": "Declare <code>int visits = 0;</code> at the top, then <code>visits++;</code> and <code>Serial.println(visits);</code> when motion is seen."
+      }
+    },
+    "fr": {
+      "title": "Lire un capteur",
+      "subtitle": "Détecteur de mouvement",
+      "heading": "Lire un capteur",
+      "lede": "Un capteur infrarouge passif (PIR) repère la chaleur d’un corps qui bouge. Il envoie simplement HIGH sur sa sortie : la carte le lit comme un bouton et affiche une alerte.",
+      "features": [
+        [
+          "eye",
+          "Capteur PIR HC-SR501"
+        ],
+        [
+          "hand",
+          "Cliquez devant le capteur pour simuler un passage"
+        ],
+        [
+          "term",
+          "Messages dans le moniteur série"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2",
+          "OUT du PIR",
+          "HIGH quand il détecte."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC du PIR",
+          "Alimentation du module."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "Via 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "PIR + LED",
+          "Retour commun."
+        ]
+      ],
+      "steps": [
+        "Le module PIR fait tout le travail : il sort <code>HIGH</code> quand il voit bouger.",
+        "<code>digitalRead(PIR_PIN)</code> lit cette sortie comme n’importe quelle entrée numérique.",
+        "<code>digitalWrite(LED_PIN, motion)</code> recopie directement l’état sur la LED.",
+        "<code>Serial.println(\"…\")</code> envoie un message texte à l’ordinateur."
+      ],
+      "specs": [
+        [
+          "Capteur",
+          "PIR HC-SR501"
+        ],
+        [
+          "Portée",
+          "jusqu’à 7 m"
+        ],
+        [
+          "Angle",
+          "≈ 110°"
+        ],
+        [
+          "Sortie",
+          "Numérique 3,3 V"
+        ],
+        [
+          "Alimentation",
+          "5 V"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "pir",
+          "Capteur PIR",
+          "Détecte le rayonnement infrarouge d’un corps en mouvement."
+        ],
+        [
+          "resistor",
+          "Résistance de 220 Ω",
+          "Protège la LED."
+        ],
+        [
+          "led",
+          "LED 5 mm",
+          "S’allume à chaque détection."
+        ]
+      ],
+      "tags": [
+        [
+          "pir",
+          "Capteur PIR"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "pin2",
+          "Broche 2"
+        ]
+      ],
+      "hint": "Cliquez sur le capteur pour passer devant",
+      "challenge": {
+        "title": "Compteur de visiteurs",
+        "goal": "Comptez les détections et affichez le total, pour que le moniteur indique 1, 2, 3…",
+        "hint": "Déclarez <code>int visits = 0;</code> en haut, puis <code>visits++;</code> et <code>Serial.println(visits);</code> à chaque mouvement."
+      }
+    },
+    "es": {
+      "title": "Leer un sensor",
+      "subtitle": "Detector de movimiento",
+      "heading": "Leer un sensor",
+      "lede": "Un sensor infrarrojo pasivo (PIR) detecta el calor de un cuerpo en movimiento. Simplemente envía HIGH por su salida: la placa lo lee como un botón y muestra una alerta.",
+      "features": [
+        [
+          "eye",
+          "Sensor PIR HC-SR501"
+        ],
+        [
+          "hand",
+          "Haz clic delante del sensor para simular un paso"
+        ],
+        [
+          "term",
+          "Mensajes en el monitor serie"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2",
+          "OUT del PIR",
+          "HIGH al detectar."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC del PIR",
+          "Alimenta el módulo."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "A través de 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "PIR + LED",
+          "Retorno común."
+        ]
+      ],
+      "steps": [
+        "El módulo PIR hace todo el trabajo: saca <code>HIGH</code> cuando detecta movimiento.",
+        "<code>digitalRead(PIR_PIN)</code> lee esa salida como cualquier entrada digital.",
+        "<code>digitalWrite(LED_PIN, motion)</code> copia el estado directamente al LED.",
+        "<code>Serial.println(\"…\")</code> envía un mensaje de texto al ordenador."
+      ],
+      "specs": [
+        [
+          "Sensor",
+          "PIR HC-SR501"
+        ],
+        [
+          "Alcance",
+          "hasta 7 m"
+        ],
+        [
+          "Ángulo",
+          "≈ 110°"
+        ],
+        [
+          "Salida",
+          "Digital 3,3 V"
+        ],
+        [
+          "Alimentación",
+          "5 V"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "pir",
+          "Sensor PIR",
+          "Detecta el infrarrojo de un cuerpo en movimiento."
+        ],
+        [
+          "resistor",
+          "Resistencia de 220 Ω",
+          "Protege el LED."
+        ],
+        [
+          "led",
+          "LED de 5 mm",
+          "Se enciende en cada detección."
+        ]
+      ],
+      "tags": [
+        [
+          "pir",
+          "Sensor PIR"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "pin2",
+          "Pin 2"
+        ]
+      ],
+      "hint": "Haz clic en el sensor para pasar por delante",
+      "challenge": {
+        "title": "Contador de visitas",
+        "goal": "Cuenta las detecciones e imprime el total, para que el monitor muestre 1, 2, 3…",
+        "hint": "Declara <code>int visits = 0;</code> arriba y luego <code>visits++;</code> y <code>Serial.println(visits);</code> al detectar movimiento."
+      }
+    },
+    "ar": {
+      "title": "اقرأ مستشعرًا",
+      "subtitle": "كاشف الحركة",
+      "heading": "اقرأ مستشعرًا",
+      "lede": "يلتقط مستشعر الأشعة تحت الحمراء السلبي (PIR) حرارة الجسم المتحرك. يرسل ببساطة HIGH على مخرجه: تقرؤه اللوحة كزر وتعرض تنبيهًا.",
+      "features": [
+        [
+          "eye",
+          "مستشعر PIR طراز HC-SR501"
+        ],
+        [
+          "hand",
+          "انقر أمام المستشعر لمحاكاة المرور"
+        ],
+        [
+          "term",
+          "رسائل في الشاشة التسلسلية"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2",
+          "مخرج PIR",
+          "HIGH عند الكشف."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "تغذية PIR",
+          "يغذّي الوحدة."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "المصباح",
+          "عبر 220 أوم."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "PIR + المصباح",
+          "عودة مشتركة."
+        ]
+      ],
+      "steps": [
+        "تقوم وحدة PIR بكل العمل: تُخرج <code>HIGH</code> عندما ترى حركة.",
+        "يقرأ <code>digitalRead(PIR_PIN)</code> هذا المخرج كأي مدخل رقمي.",
+        "ينسخ <code>digitalWrite(LED_PIN, motion)</code> الحالة مباشرة إلى المصباح.",
+        "يرسل <code>Serial.println(\"…\")</code> رسالة نصية إلى الحاسوب."
+      ],
+      "specs": [
+        [
+          "المستشعر",
+          "PIR طراز HC-SR501"
+        ],
+        [
+          "المدى",
+          "حتى 7 أمتار"
+        ],
+        [
+          "الزاوية",
+          "≈ 110°"
+        ],
+        [
+          "المخرج",
+          "رقمي 3.3 فولت"
+        ],
+        [
+          "التغذية",
+          "5 فولت"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "pir",
+          "مستشعر PIR",
+          "يكشف الأشعة تحت الحمراء من جسم متحرك."
+        ],
+        [
+          "resistor",
+          "مقاومة 220 أوم",
+          "تحمي المصباح."
+        ],
+        [
+          "led",
+          "مصباح LED قياس 5 مم",
+          "يضيء عند كل كشف."
+        ]
+      ],
+      "tags": [
+        [
+          "pir",
+          "مستشعر PIR"
+        ],
+        [
+          "led",
+          "المصباح"
+        ],
+        [
+          "pin2",
+          "المنفذ 2"
+        ]
+      ],
+      "hint": "انقر على المستشعر للمرور أمامه",
+      "challenge": {
+        "title": "عدّاد الزوار",
+        "goal": "عُدّ مرات الكشف واطبع المجموع لتعرض الشاشة 1، 2، 3…",
+        "hint": "صرّح عن <code>int visits = 0;</code> في الأعلى، ثم <code>visits++;</code> و<code>Serial.println(visits);</code> عند رصد حركة."
+      }
+    }
+  },
+  {
+    "slug": "sound",
+    "position": 8,
+    "category": "outputs",
+    "code": "const int BUZZER = 8;\nint melody[] = {262, 294, 330, 349, 392, 440, 494, 523};\n\nvoid setup() {}\n\nvoid loop() {\n  for (int i = 0; i < 8; i++) {\n    tone(BUZZER, melody[i], 200);\n    delay(250);\n  }\n  noTone(BUZZER);\n  delay(1000);\n}",
+    "en": {
+      "title": "Make sound",
+      "subtitle": "A piezo buzzer",
+      "heading": "Make sound",
+      "lede": "A piezo buzzer vibrates at whatever frequency it is sent. With <code>tone()</code>, the Arduino plays a scale from C to C — turn sound on to hear it.",
+      "features": [
+        [
+          "note",
+          "<code>tone(pin, frequency, duration)</code>"
+        ],
+        [
+          "list",
+          "An array of notes and a <code>for</code> loop"
+        ],
+        [
+          "speaker",
+          "Turn sound on in settings"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D8",
+          "Buzzer +",
+          "Square wave."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Buzzer −",
+          "Return."
+        ]
+      ],
+      "steps": [
+        "<code>int melody[]</code> stores note frequencies in hertz (262 Hz = C).",
+        "<code>for (int i = 0; i < 8; i++)</code> walks the array one note at a time.",
+        "<code>tone(BUZZER, melody[i], 200)</code> plays each note for 200 ms.",
+        "<code>noTone()</code> stops the sound, then it repeats after a second."
+      ],
+      "specs": [
+        [
+          "Buzzer",
+          "12 mm passive piezo"
+        ],
+        [
+          "Useful range",
+          "≈ 100 Hz – 10 kHz"
+        ],
+        [
+          "Scale",
+          "C4 → C5"
+        ],
+        [
+          "Pin",
+          "D8"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "buzzer",
+          "Piezo buzzer",
+          "Turns an electric signal into sound."
+        ]
+      ],
+      "tags": [
+        [
+          "buzzer",
+          "Buzzer"
+        ],
+        [
+          "pin8",
+          "Pin 8"
+        ]
+      ],
+      "challenge": {
+        "title": "Concert pitch",
+        "goal": "Play the note A4 at exactly 440 Hz.",
+        "hint": "Put <code>440</code> in the melody array, or call <code>tone(BUZZER, 440, 300);</code>."
+      }
+    },
+    "fr": {
+      "title": "Faire du son",
+      "subtitle": "Un buzzer piézo",
+      "heading": "Faire du son",
+      "lede": "Un buzzer piézo vibre à la fréquence qu’on lui envoie. Avec <code>tone()</code>, l’Arduino joue une gamme de do à do — activez le son pour l’entendre.",
+      "features": [
+        [
+          "note",
+          "<code>tone(broche, fréquence, durée)</code>"
+        ],
+        [
+          "list",
+          "Un tableau de notes et une boucle <code>for</code>"
+        ],
+        [
+          "speaker",
+          "Activez le son dans les réglages"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D8",
+          "Buzzer +",
+          "Signal carré."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Buzzer −",
+          "Retour."
+        ]
+      ],
+      "steps": [
+        "<code>int melody[]</code> stocke les fréquences des notes en hertz (262 Hz = do).",
+        "<code>for (int i = 0; i < 8; i++)</code> parcourt le tableau, note après note.",
+        "<code>tone(BUZZER, melody[i], 200)</code> joue chaque note pendant 200 ms.",
+        "<code>noTone()</code> coupe le son, puis on recommence après une seconde."
+      ],
+      "specs": [
+        [
+          "Buzzer",
+          "Piézo passif 12 mm"
+        ],
+        [
+          "Plage utile",
+          "≈ 100 Hz – 10 kHz"
+        ],
+        [
+          "Gamme",
+          "Do4 → Do5"
+        ],
+        [
+          "Broche",
+          "D8"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "buzzer",
+          "Buzzer piézo",
+          "Transforme un signal électrique en vibration sonore."
+        ]
+      ],
+      "tags": [
+        [
+          "buzzer",
+          "Buzzer"
+        ],
+        [
+          "pin8",
+          "Broche 8"
+        ]
+      ],
+      "challenge": {
+        "title": "Le diapason",
+        "goal": "Jouez la note la4 à exactement 440 Hz.",
+        "hint": "Mettez <code>440</code> dans le tableau de notes, ou appelez <code>tone(BUZZER, 440, 300);</code>."
+      }
+    },
+    "es": {
+      "title": "Hacer sonido",
+      "subtitle": "Un zumbador piezoeléctrico",
+      "heading": "Hacer sonido",
+      "lede": "Un zumbador piezoeléctrico vibra a la frecuencia que recibe. Con <code>tone()</code>, el Arduino toca una escala de do a do; activa el sonido para oírla.",
+      "features": [
+        [
+          "note",
+          "<code>tone(pin, frecuencia, duración)</code>"
+        ],
+        [
+          "list",
+          "Un array de notas y un bucle <code>for</code>"
+        ],
+        [
+          "speaker",
+          "Activa el sonido en los ajustes"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D8",
+          "Zumbador +",
+          "Onda cuadrada."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Zumbador −",
+          "Retorno."
+        ]
+      ],
+      "steps": [
+        "<code>int melody[]</code> guarda las frecuencias de las notas en hercios (262 Hz = do).",
+        "<code>for (int i = 0; i < 8; i++)</code> recorre el array nota a nota.",
+        "<code>tone(BUZZER, melody[i], 200)</code> toca cada nota durante 200 ms.",
+        "<code>noTone()</code> detiene el sonido y todo se repite tras un segundo."
+      ],
+      "specs": [
+        [
+          "Zumbador",
+          "Piezo pasivo de 12 mm"
+        ],
+        [
+          "Rango útil",
+          "≈ 100 Hz – 10 kHz"
+        ],
+        [
+          "Escala",
+          "Do4 → Do5"
+        ],
+        [
+          "Pin",
+          "D8"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "buzzer",
+          "Zumbador piezoeléctrico",
+          "Convierte una señal eléctrica en sonido."
+        ]
+      ],
+      "tags": [
+        [
+          "buzzer",
+          "Zumbador"
+        ],
+        [
+          "pin8",
+          "Pin 8"
+        ]
+      ],
+      "challenge": {
+        "title": "El diapasón",
+        "goal": "Toca la nota la4 a exactamente 440 Hz.",
+        "hint": "Pon <code>440</code> en el array de notas o llama a <code>tone(BUZZER, 440, 300);</code>."
+      }
+    },
+    "ar": {
+      "title": "أصدِر صوتًا",
+      "subtitle": "طنّان كهرضغطي",
+      "heading": "أصدِر صوتًا",
+      "lede": "يهتز الطنّان الكهرضغطي بالتردد الذي يُرسل إليه. باستخدام <code>tone()</code> يعزف Arduino سلّمًا موسيقيًا من دو إلى دو؛ فعّل الصوت لتسمعه.",
+      "features": [
+        [
+          "note",
+          "<code>tone(المنفذ، التردد، المدة)</code>"
+        ],
+        [
+          "list",
+          "مصفوفة نغمات وحلقة <code>for</code>"
+        ],
+        [
+          "speaker",
+          "فعّل الصوت من الإعدادات"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D8",
+          "الطنّان +",
+          "موجة مربعة."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "الطنّان −",
+          "العودة."
+        ]
+      ],
+      "steps": [
+        "تخزّن <code>int melody[]</code> ترددات النغمات بالهرتز (262 هرتز = دو).",
+        "تمر <code>for (int i = 0; i < 8; i++)</code> على المصفوفة نغمةً تلو الأخرى.",
+        "يعزف <code>tone(BUZZER, melody[i], 200)</code> كل نغمة لمدة 200 ملي ثانية.",
+        "يوقف <code>noTone()</code> الصوت، ثم يتكرر كل شيء بعد ثانية."
+      ],
+      "specs": [
+        [
+          "الطنّان",
+          "كهرضغطي سلبي 12 مم"
+        ],
+        [
+          "المجال المفيد",
+          "≈ 100 هرتز – 10 كيلوهرتز"
+        ],
+        [
+          "السلّم",
+          "دو4 ← دو5"
+        ],
+        [
+          "المنفذ",
+          "D8"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "buzzer",
+          "طنّان كهرضغطي",
+          "يحوّل الإشارة الكهربائية إلى صوت."
+        ]
+      ],
+      "tags": [
+        [
+          "buzzer",
+          "الطنّان"
+        ],
+        [
+          "pin8",
+          "المنفذ 8"
+        ]
+      ],
+      "challenge": {
+        "title": "الشوكة الرنانة",
+        "goal": "اعزف نغمة لا4 بتردد 440 هرتز بالضبط.",
+        "hint": "ضع <code>440</code> في مصفوفة النغمات أو استدعِ <code>tone(BUZZER, 440, 300);</code>."
+      }
+    }
+  },
+  {
+    "slug": "piano",
+    "position": 9,
+    "category": "outputs",
+    "code": "const int BUZZER = 8;\nconst int KEYS[] = {2, 3, 4, 5};\nconst int NOTES[] = {262, 330, 392, 523};\n\nvoid setup() {\n  for (int i = 0; i < 4; i++) {\n    pinMode(KEYS[i], INPUT_PULLUP);\n  }\n}\n\nvoid loop() {\n  int played = -1;\n  for (int i = 0; i < 4; i++) {\n    if (digitalRead(KEYS[i]) == LOW) played = i;\n  }\n  if (played >= 0) {\n    tone(BUZZER, NOTES[played]);\n  } else {\n    noTone(BUZZER);\n  }\n}",
+    "en": {
+      "title": "Mini piano",
+      "subtitle": "Build a mini piano",
+      "heading": "Mini piano",
+      "lede": "Four buttons and a buzzer make an instrument! Each key maps to a note and the board plays whichever one is held down.",
+      "features": [
+        [
+          "keys",
+          "Four inputs with <code>INPUT_PULLUP</code>"
+        ],
+        [
+          "hand",
+          "Click the keys, or press 1 to 4"
+        ],
+        [
+          "note",
+          "<code>tone()</code> without a duration: the note holds while pressed"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2–D5",
+          "Keys",
+          "One pin per button."
+        ],
+        [
+          "#c0652d",
+          "D8",
+          "Buzzer +",
+          "Sound signal."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Keys + buzzer",
+          "Shared return."
+        ]
+      ],
+      "steps": [
+        "The <code>KEYS[]</code> and <code>NOTES[]</code> arrays pair each button with a frequency.",
+        "A loop enables each key’s pull-up resistor.",
+        "Every pass looks for the pressed key and keeps it in <code>played</code>.",
+        "If one is found, <code>tone()</code> plays its note; otherwise <code>noTone()</code>."
+      ],
+      "specs": [
+        [
+          "Keys",
+          "4 push buttons"
+        ],
+        [
+          "Notes",
+          "C, E, G, high C"
+        ],
+        [
+          "Buzzer",
+          "Passive piezo"
+        ],
+        [
+          "Pins",
+          "D2–D5, D8"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "button",
+          "Push buttons",
+          "The piano keys."
+        ],
+        [
+          "buzzer",
+          "Piezo buzzer",
+          "Plays the chosen note."
+        ]
+      ],
+      "tags": [
+        [
+          "key0",
+          "C"
+        ],
+        [
+          "key1",
+          "E"
+        ],
+        [
+          "key2",
+          "G"
+        ],
+        [
+          "key3",
+          "High C"
+        ],
+        [
+          "buzzer",
+          "Buzzer"
+        ]
+      ],
+      "hint": "Click the keys or press 1–4",
+      "challenge": {
+        "title": "Retune a key",
+        "goal": "Change one key so it plays A4 (440 Hz), then press it.",
+        "hint": "Replace one value in <code>NOTES[]</code> with <code>440</code>."
+      }
+    },
+    "fr": {
+      "title": "Mini piano",
+      "subtitle": "Construire un mini piano",
+      "heading": "Mini piano",
+      "lede": "Quatre boutons, un buzzer, et voilà un instrument ! Chaque touche correspond à une note : la carte joue celle qui est enfoncée.",
+      "features": [
+        [
+          "keys",
+          "Quatre entrées avec <code>INPUT_PULLUP</code>"
+        ],
+        [
+          "hand",
+          "Cliquez sur les touches, ou utilisez 1 à 4 au clavier"
+        ],
+        [
+          "note",
+          "<code>tone()</code> sans durée : le son tient tant qu’on appuie"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2–D5",
+          "Touches",
+          "Une broche par bouton."
+        ],
+        [
+          "#c0652d",
+          "D8",
+          "Buzzer +",
+          "Signal sonore."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Touches + buzzer",
+          "Retour commun."
+        ]
+      ],
+      "steps": [
+        "Les tableaux <code>KEYS[]</code> et <code>NOTES[]</code> associent chaque bouton à une fréquence.",
+        "Une boucle active la résistance de tirage de chaque touche.",
+        "À chaque tour, on cherche la touche enfoncée et on la garde dans <code>played</code>.",
+        "Si une touche est trouvée, <code>tone()</code> joue sa note ; sinon <code>noTone()</code>."
+      ],
+      "specs": [
+        [
+          "Touches",
+          "4 boutons-poussoirs"
+        ],
+        [
+          "Notes",
+          "Do, Mi, Sol, Do aigu"
+        ],
+        [
+          "Buzzer",
+          "Piézo passif"
+        ],
+        [
+          "Broches",
+          "D2–D5, D8"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "button",
+          "Boutons-poussoirs",
+          "Les touches du piano."
+        ],
+        [
+          "buzzer",
+          "Buzzer piézo",
+          "Joue la note choisie."
+        ]
+      ],
+      "tags": [
+        [
+          "key0",
+          "Do"
+        ],
+        [
+          "key1",
+          "Mi"
+        ],
+        [
+          "key2",
+          "Sol"
+        ],
+        [
+          "key3",
+          "Do aigu"
+        ],
+        [
+          "buzzer",
+          "Buzzer"
+        ]
+      ],
+      "hint": "Cliquez sur les touches ou tapez 1–4",
+      "challenge": {
+        "title": "Réaccordez une touche",
+        "goal": "Modifiez une touche pour qu’elle joue la4 (440 Hz), puis appuyez dessus.",
+        "hint": "Remplacez une valeur de <code>NOTES[]</code> par <code>440</code>."
+      }
+    },
+    "es": {
+      "title": "Mini piano",
+      "subtitle": "Construye un mini piano",
+      "heading": "Mini piano",
+      "lede": "¡Cuatro botones y un zumbador forman un instrumento! Cada tecla corresponde a una nota y la placa toca la que está pulsada.",
+      "features": [
+        [
+          "keys",
+          "Cuatro entradas con <code>INPUT_PULLUP</code>"
+        ],
+        [
+          "hand",
+          "Haz clic en las teclas o usa las teclas 1 a 4"
+        ],
+        [
+          "note",
+          "<code>tone()</code> sin duración: la nota suena mientras pulsas"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2–D5",
+          "Teclas",
+          "Un pin por botón."
+        ],
+        [
+          "#c0652d",
+          "D8",
+          "Zumbador +",
+          "Señal sonora."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Teclas + zumbador",
+          "Retorno común."
+        ]
+      ],
+      "steps": [
+        "Los arrays <code>KEYS[]</code> y <code>NOTES[]</code> asocian cada botón a una frecuencia.",
+        "Un bucle activa la resistencia pull-up de cada tecla.",
+        "En cada vuelta se busca la tecla pulsada y se guarda en <code>played</code>.",
+        "Si hay una, <code>tone()</code> toca su nota; si no, <code>noTone()</code>."
+      ],
+      "specs": [
+        [
+          "Teclas",
+          "4 pulsadores"
+        ],
+        [
+          "Notas",
+          "Do, Mi, Sol, Do agudo"
+        ],
+        [
+          "Zumbador",
+          "Piezo pasivo"
+        ],
+        [
+          "Pines",
+          "D2–D5, D8"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "button",
+          "Pulsadores",
+          "Las teclas del piano."
+        ],
+        [
+          "buzzer",
+          "Zumbador piezoeléctrico",
+          "Toca la nota elegida."
+        ]
+      ],
+      "tags": [
+        [
+          "key0",
+          "Do"
+        ],
+        [
+          "key1",
+          "Mi"
+        ],
+        [
+          "key2",
+          "Sol"
+        ],
+        [
+          "key3",
+          "Do agudo"
+        ],
+        [
+          "buzzer",
+          "Zumbador"
+        ]
+      ],
+      "hint": "Haz clic en las teclas o pulsa 1–4",
+      "challenge": {
+        "title": "Afina una tecla",
+        "goal": "Cambia una tecla para que toque la4 (440 Hz) y púlsala.",
+        "hint": "Sustituye un valor de <code>NOTES[]</code> por <code>440</code>."
+      }
+    },
+    "ar": {
+      "title": "بيانو صغير",
+      "subtitle": "اصنع بيانو صغيرًا",
+      "heading": "بيانو صغير",
+      "lede": "أربعة أزرار وطنّان تصنع آلة موسيقية! كل مفتاح يقابل نغمة، وتعزف اللوحة النغمة المضغوطة.",
+      "features": [
+        [
+          "keys",
+          "أربعة مداخل باستخدام <code>INPUT_PULLUP</code>"
+        ],
+        [
+          "hand",
+          "انقر على المفاتيح أو استخدم الأرقام 1 إلى 4"
+        ],
+        [
+          "note",
+          "<code>tone()</code> دون مدة: تستمر النغمة طالما تضغط"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D2–D5",
+          "المفاتيح",
+          "منفذ لكل زر."
+        ],
+        [
+          "#c0652d",
+          "D8",
+          "الطنّان +",
+          "الإشارة الصوتية."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "المفاتيح + الطنّان",
+          "عودة مشتركة."
+        ]
+      ],
+      "steps": [
+        "تربط المصفوفتان <code>KEYS[]</code> و<code>NOTES[]</code> كل زر بتردد.",
+        "تفعّل حلقةٌ مقاومة الرفع لكل مفتاح.",
+        "في كل دورة نبحث عن المفتاح المضغوط ونحفظه في <code>played</code>.",
+        "إذا وُجد، يعزف <code>tone()</code> نغمته؛ وإلا يُستدعى <code>noTone()</code>."
+      ],
+      "specs": [
+        [
+          "المفاتيح",
+          "4 أزرار ضغط"
+        ],
+        [
+          "النغمات",
+          "دو، مي، صول، دو الحادة"
+        ],
+        [
+          "الطنّان",
+          "كهرضغطي سلبي"
+        ],
+        [
+          "المنافذ",
+          "D2–D5، D8"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "button",
+          "أزرار ضغط",
+          "مفاتيح البيانو."
+        ],
+        [
+          "buzzer",
+          "طنّان كهرضغطي",
+          "يعزف النغمة المختارة."
+        ]
+      ],
+      "tags": [
+        [
+          "key0",
+          "دو"
+        ],
+        [
+          "key1",
+          "مي"
+        ],
+        [
+          "key2",
+          "صول"
+        ],
+        [
+          "key3",
+          "دو الحادة"
+        ],
+        [
+          "buzzer",
+          "الطنّان"
+        ]
+      ],
+      "hint": "انقر على المفاتيح أو اضغط 1–4",
+      "challenge": {
+        "title": "أعِد ضبط مفتاح",
+        "goal": "غيّر أحد المفاتيح ليعزف لا4 (440 هرتز) ثم اضغط عليه.",
+        "hint": "استبدل إحدى قيم <code>NOTES[]</code> بـ <code>440</code>."
+      }
+    }
+  },
+  {
+    "slug": "motor",
+    "position": 10,
+    "category": "motion",
+    "code": "const int MOTOR_PIN = 3;\n\nvoid setup() {\n  pinMode(MOTOR_PIN, OUTPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  for (int speed = 0; speed <= 255; speed += 51) {\n    analogWrite(MOTOR_PIN, speed);\n    Serial.println(speed);\n    delay(700);\n  }\n  analogWrite(MOTOR_PIN, 0);\n  delay(1500);\n}",
+    "en": {
+      "title": "Drive a motor",
+      "subtitle": "DC motor and transistor",
+      "heading": "Drive a motor",
+      "lede": "A motor draws too much current for an Arduino pin. A transistor acts as a switch: pin 3 drives it with PWM and the motor speeds up in steps.",
+      "features": [
+        [
+          "motor",
+          "DC motor"
+        ],
+        [
+          "chip",
+          "TIP120 NPN transistor as a switch"
+        ],
+        [
+          "shield",
+          "Flyback diode to protect the board"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D3 ~",
+          "Transistor base",
+          "Through 1 kΩ."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Motor +",
+          "Motor supply."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Emitter",
+          "Motor return."
+        ]
+      ],
+      "steps": [
+        "The transistor passes a large current when its base gets a small one.",
+        "<code>for (int speed = 0; speed <= 255; speed += 51)</code> raises speed in steps.",
+        "<code>analogWrite(MOTOR_PIN, speed)</code> chops the supply: higher values spin faster.",
+        "The diode soaks up the voltage spike when the motor stops."
+      ],
+      "specs": [
+        [
+          "Motor",
+          "3–6 V DC"
+        ],
+        [
+          "Transistor",
+          "TIP120 (Darlington)"
+        ],
+        [
+          "Diode",
+          "1N4007"
+        ],
+        [
+          "Base resistor",
+          "1 kΩ"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "motor",
+          "DC motor",
+          "Spins when current flows."
+        ],
+        [
+          "transistor",
+          "TIP120 transistor",
+          "A switch controlled by the board."
+        ],
+        [
+          "diode",
+          "1N4007 diode",
+          "Guards against voltage spikes."
+        ]
+      ],
+      "tags": [
+        [
+          "motor",
+          "Motor"
+        ],
+        [
+          "transistor",
+          "Transistor"
+        ],
+        [
+          "pin3",
+          "Pin 3"
+        ]
+      ],
+      "challenge": {
+        "title": "Cruise control",
+        "goal": "Keep the motor running steadily at half speed (PWM ≈ 128).",
+        "hint": "Replace the <code>for</code> loop with a single <code>analogWrite(MOTOR_PIN, 128);</code>."
+      }
+    },
+    "fr": {
+      "title": "Piloter un moteur",
+      "subtitle": "Moteur CC et transistor",
+      "heading": "Piloter un moteur",
+      "lede": "Un moteur consomme trop de courant pour une broche Arduino. Un transistor sert d’interrupteur : la broche 3 le commande en PWM et le moteur accélère par paliers.",
+      "features": [
+        [
+          "motor",
+          "Moteur à courant continu"
+        ],
+        [
+          "chip",
+          "Transistor NPN TIP120 comme interrupteur"
+        ],
+        [
+          "shield",
+          "Diode de roue libre pour protéger la carte"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D3 ~",
+          "Base du transistor",
+          "Via 1 kΩ."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Moteur +",
+          "Alimentation du moteur."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Émetteur",
+          "Retour du moteur."
+        ]
+      ],
+      "steps": [
+        "Le transistor laisse passer un fort courant quand sa base reçoit un petit courant.",
+        "<code>for (int speed = 0; speed <= 255; speed += 51)</code> monte la vitesse par paliers.",
+        "<code>analogWrite(MOTOR_PIN, speed)</code> hache l’alimentation : plus la valeur est haute, plus ça tourne vite.",
+        "La diode absorbe le pic de tension quand le moteur s’arrête."
+      ],
+      "specs": [
+        [
+          "Moteur",
+          "CC 3–6 V"
+        ],
+        [
+          "Transistor",
+          "TIP120 (Darlington)"
+        ],
+        [
+          "Diode",
+          "1N4007"
+        ],
+        [
+          "Résistance de base",
+          "1 kΩ"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "motor",
+          "Moteur CC",
+          "Tourne quand le courant le traverse."
+        ],
+        [
+          "transistor",
+          "Transistor TIP120",
+          "Un interrupteur commandé par la carte."
+        ],
+        [
+          "diode",
+          "Diode 1N4007",
+          "Protège contre les pics de tension."
+        ]
+      ],
+      "tags": [
+        [
+          "motor",
+          "Moteur"
+        ],
+        [
+          "transistor",
+          "Transistor"
+        ],
+        [
+          "pin3",
+          "Broche 3"
+        ]
+      ],
+      "challenge": {
+        "title": "Régulateur de vitesse",
+        "goal": "Faites tourner le moteur en continu à mi-vitesse (PWM ≈ 128).",
+        "hint": "Remplacez la boucle <code>for</code> par un seul <code>analogWrite(MOTOR_PIN, 128);</code>."
+      }
+    },
+    "es": {
+      "title": "Controlar un motor",
+      "subtitle": "Motor CC y transistor",
+      "heading": "Controlar un motor",
+      "lede": "Un motor consume demasiada corriente para un pin de Arduino. Un transistor actúa como interruptor: el pin 3 lo controla con PWM y el motor acelera por escalones.",
+      "features": [
+        [
+          "motor",
+          "Motor de corriente continua"
+        ],
+        [
+          "chip",
+          "Transistor NPN TIP120 como interruptor"
+        ],
+        [
+          "shield",
+          "Diodo de protección para la placa"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D3 ~",
+          "Base del transistor",
+          "A través de 1 kΩ."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Motor +",
+          "Alimentación del motor."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Emisor",
+          "Retorno del motor."
+        ]
+      ],
+      "steps": [
+        "El transistor deja pasar una corriente grande cuando su base recibe una pequeña.",
+        "<code>for (int speed = 0; speed <= 255; speed += 51)</code> sube la velocidad por escalones.",
+        "<code>analogWrite(MOTOR_PIN, speed)</code> trocea la alimentación: cuanto mayor el valor, más rápido gira.",
+        "El diodo absorbe el pico de tensión cuando el motor se detiene."
+      ],
+      "specs": [
+        [
+          "Motor",
+          "CC 3–6 V"
+        ],
+        [
+          "Transistor",
+          "TIP120 (Darlington)"
+        ],
+        [
+          "Diodo",
+          "1N4007"
+        ],
+        [
+          "Resistencia de base",
+          "1 kΩ"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "motor",
+          "Motor CC",
+          "Gira cuando lo atraviesa la corriente."
+        ],
+        [
+          "transistor",
+          "Transistor TIP120",
+          "Un interruptor controlado por la placa."
+        ],
+        [
+          "diode",
+          "Diodo 1N4007",
+          "Protege contra picos de tensión."
+        ]
+      ],
+      "tags": [
+        [
+          "motor",
+          "Motor"
+        ],
+        [
+          "transistor",
+          "Transistor"
+        ],
+        [
+          "pin3",
+          "Pin 3"
+        ]
+      ],
+      "challenge": {
+        "title": "Control de crucero",
+        "goal": "Mantén el motor girando a media velocidad constante (PWM ≈ 128).",
+        "hint": "Sustituye el bucle <code>for</code> por un solo <code>analogWrite(MOTOR_PIN, 128);</code>."
+      }
+    },
+    "ar": {
+      "title": "تحكّم في محرك",
+      "subtitle": "محرك تيار مستمر وترانزستور",
+      "heading": "تحكّم في محرك",
+      "lede": "يستهلك المحرك تيارًا أكبر مما يتحمله منفذ Arduino. يعمل الترانزستور كمفتاح: يتحكم فيه المنفذ 3 عبر PWM فيتسارع المحرك على مراحل.",
+      "features": [
+        [
+          "motor",
+          "محرك تيار مستمر"
+        ],
+        [
+          "chip",
+          "ترانزستور NPN طراز TIP120 كمفتاح"
+        ],
+        [
+          "shield",
+          "ثنائي حماية لوقاية اللوحة"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D3 ~",
+          "قاعدة الترانزستور",
+          "عبر 1 كيلو أوم."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "المحرك +",
+          "تغذية المحرك."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "الباعث",
+          "عودة المحرك."
+        ]
+      ],
+      "steps": [
+        "يمرّر الترانزستور تيارًا كبيرًا عندما تتلقى قاعدته تيارًا صغيرًا.",
+        "ترفع <code>for (int speed = 0; speed <= 255; speed += 51)</code> السرعة على مراحل.",
+        "يقطّع <code>analogWrite(MOTOR_PIN, speed)</code> التغذية: كلما زادت القيمة زادت سرعة الدوران.",
+        "يمتص الثنائي ذروة الجهد عند توقف المحرك."
+      ],
+      "specs": [
+        [
+          "المحرك",
+          "تيار مستمر 3–6 فولت"
+        ],
+        [
+          "الترانزستور",
+          "TIP120 (دارلنغتون)"
+        ],
+        [
+          "الثنائي",
+          "1N4007"
+        ],
+        [
+          "مقاومة القاعدة",
+          "1 كيلو أوم"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "motor",
+          "محرك تيار مستمر",
+          "يدور عندما يمر فيه التيار."
+        ],
+        [
+          "transistor",
+          "ترانزستور TIP120",
+          "مفتاح تتحكم فيه اللوحة."
+        ],
+        [
+          "diode",
+          "ثنائي 1N4007",
+          "يحمي من ذروات الجهد."
+        ]
+      ],
+      "tags": [
+        [
+          "motor",
+          "المحرك"
+        ],
+        [
+          "transistor",
+          "الترانزستور"
+        ],
+        [
+          "pin3",
+          "المنفذ 3"
+        ]
+      ],
+      "challenge": {
+        "title": "مثبّت السرعة",
+        "goal": "أبقِ المحرك يدور بثبات بنصف السرعة (PWM ≈ 128).",
+        "hint": "استبدل حلقة <code>for</code> باستدعاء واحد <code>analogWrite(MOTOR_PIN, 128);</code>."
+      }
+    }
+  },
+  {
+    "slug": "heat",
+    "position": 11,
+    "category": "sensors",
+    "code": "const int TEMP_PIN = A0;\nconst int LED_PIN = 13;\n\nvoid setup() {\n  pinMode(LED_PIN, OUTPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int raw = analogRead(TEMP_PIN);\n  float volts = raw * 5.0 / 1023.0;\n  float celsius = (volts - 0.5) * 100.0;\n  Serial.println(celsius);\n  digitalWrite(LED_PIN, celsius > 30 ? HIGH : LOW);\n  delay(500);\n}",
+    "en": {
+      "title": "Measure heat",
+      "subtitle": "Temperature sensor",
+      "heading": "Measure heat",
+      "lede": "The TMP36 outputs a voltage proportional to temperature. A little maths turns it into degrees Celsius, and the LED lights above 30 °C.",
+      "features": [
+        [
+          "temp",
+          "TMP36 analog sensor"
+        ],
+        [
+          "hand",
+          "Hold a click on the sensor to warm it"
+        ],
+        [
+          "calc",
+          "Decimal numbers with <code>float</code>"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "TMP36 output",
+          "10 mV per °C, offset by 0.5 V."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "Sensor supply."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "Alert LED",
+          "Through 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Sensor + LED",
+          "Shared return."
+        ]
+      ],
+      "steps": [
+        "<code>raw * 5.0 / 1023.0</code> converts the raw reading to volts.",
+        "The TMP36 gives 0.5 V at 0 °C, plus 10 mV per degree.",
+        "So <code>(volts - 0.5) * 100.0</code> is the temperature in °C.",
+        "The <code>? :</code> operator picks HIGH or LOW in one line."
+      ],
+      "specs": [
+        [
+          "Sensor",
+          "TMP36"
+        ],
+        [
+          "Range",
+          "−40 to +125 °C"
+        ],
+        [
+          "Accuracy",
+          "± 2 °C"
+        ],
+        [
+          "Sensitivity",
+          "10 mV/°C"
+        ],
+        [
+          "Alert threshold",
+          "30 °C"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "tmp36",
+          "TMP36 sensor",
+          "Its output voltage tracks temperature."
+        ],
+        [
+          "resistor",
+          "220 Ω resistor",
+          "Protects the LED."
+        ],
+        [
+          "led",
+          "5 mm LED",
+          "Heat alert."
+        ]
+      ],
+      "tags": [
+        [
+          "tmp36",
+          "TMP36"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "Hold a click on the sensor",
+      "challenge": {
+        "title": "Early warning",
+        "goal": "Lower the alarm to 25 °C, then warm the sensor until the LED lights.",
+        "hint": "Change <code>celsius &gt; 30</code> into <code>celsius &gt; 25</code>."
+      }
+    },
+    "fr": {
+      "title": "Mesurer la chaleur",
+      "subtitle": "Capteur de température",
+      "heading": "Mesurer la chaleur",
+      "lede": "Le TMP36 délivre une tension proportionnelle à la température. Un petit calcul la convertit en degrés Celsius, et la LED s’allume au-dessus de 30 °C.",
+      "features": [
+        [
+          "temp",
+          "Capteur analogique TMP36"
+        ],
+        [
+          "hand",
+          "Maintenez le clic sur le capteur pour le réchauffer"
+        ],
+        [
+          "calc",
+          "Des nombres à virgule avec <code>float</code>"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Sortie du TMP36",
+          "10 mV par °C, décalée de 0,5 V."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "Alimentation du capteur."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED d’alerte",
+          "Via 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Capteur + LED",
+          "Retour commun."
+        ]
+      ],
+      "steps": [
+        "<code>raw * 5.0 / 1023.0</code> convertit la mesure brute en volts.",
+        "Le TMP36 donne 0,5 V à 0 °C, puis 10 mV de plus par degré.",
+        "<code>(volts - 0.5) * 100.0</code> donne donc la température en °C.",
+        "L’opérateur <code>? :</code> choisit HIGH ou LOW en une ligne."
+      ],
+      "specs": [
+        [
+          "Capteur",
+          "TMP36"
+        ],
+        [
+          "Plage",
+          "−40 à +125 °C"
+        ],
+        [
+          "Précision",
+          "± 2 °C"
+        ],
+        [
+          "Sensibilité",
+          "10 mV/°C"
+        ],
+        [
+          "Seuil d’alerte",
+          "30 °C"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "tmp36",
+          "Capteur TMP36",
+          "Sa tension de sortie suit la température."
+        ],
+        [
+          "resistor",
+          "Résistance de 220 Ω",
+          "Protège la LED."
+        ],
+        [
+          "led",
+          "LED 5 mm",
+          "Alerte de chaleur."
+        ]
+      ],
+      "tags": [
+        [
+          "tmp36",
+          "TMP36"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "Maintenez le clic sur le capteur",
+      "challenge": {
+        "title": "Alerte précoce",
+        "goal": "Abaissez l’alerte à 25 °C, puis réchauffez le capteur jusqu’à ce que la LED s’allume.",
+        "hint": "Remplacez <code>celsius &gt; 30</code> par <code>celsius &gt; 25</code>."
+      }
+    },
+    "es": {
+      "title": "Medir el calor",
+      "subtitle": "Sensor de temperatura",
+      "heading": "Medir el calor",
+      "lede": "El TMP36 entrega una tensión proporcional a la temperatura. Un pequeño cálculo la convierte en grados Celsius y el LED se enciende por encima de 30 °C.",
+      "features": [
+        [
+          "temp",
+          "Sensor analógico TMP36"
+        ],
+        [
+          "hand",
+          "Mantén el clic sobre el sensor para calentarlo"
+        ],
+        [
+          "calc",
+          "Números decimales con <code>float</code>"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Salida del TMP36",
+          "10 mV por °C, desplazada 0,5 V."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "Alimenta el sensor."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED de alerta",
+          "A través de 220 Ω."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Sensor + LED",
+          "Retorno común."
+        ]
+      ],
+      "steps": [
+        "<code>raw * 5.0 / 1023.0</code> convierte la lectura bruta en voltios.",
+        "El TMP36 da 0,5 V a 0 °C y 10 mV más por cada grado.",
+        "Así, <code>(volts - 0.5) * 100.0</code> es la temperatura en °C.",
+        "El operador <code>? :</code> elige HIGH o LOW en una sola línea."
+      ],
+      "specs": [
+        [
+          "Sensor",
+          "TMP36"
+        ],
+        [
+          "Rango",
+          "−40 a +125 °C"
+        ],
+        [
+          "Precisión",
+          "± 2 °C"
+        ],
+        [
+          "Sensibilidad",
+          "10 mV/°C"
+        ],
+        [
+          "Umbral de alerta",
+          "30 °C"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "tmp36",
+          "Sensor TMP36",
+          "Su tensión de salida sigue a la temperatura."
+        ],
+        [
+          "resistor",
+          "Resistencia de 220 Ω",
+          "Protege el LED."
+        ],
+        [
+          "led",
+          "LED de 5 mm",
+          "Alerta de calor."
+        ]
+      ],
+      "tags": [
+        [
+          "tmp36",
+          "TMP36"
+        ],
+        [
+          "led",
+          "LED"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "Mantén el clic sobre el sensor",
+      "challenge": {
+        "title": "Alerta temprana",
+        "goal": "Baja la alarma a 25 °C y calienta el sensor hasta que el LED se encienda.",
+        "hint": "Cambia <code>celsius &gt; 30</code> por <code>celsius &gt; 25</code>."
+      }
+    },
+    "ar": {
+      "title": "قِس الحرارة",
+      "subtitle": "مستشعر الحرارة",
+      "heading": "قِس الحرارة",
+      "lede": "يعطي مستشعر TMP36 جهدًا يتناسب مع درجة الحرارة. عملية حسابية بسيطة تحوّله إلى درجات مئوية، ويضيء المصباح فوق 30 درجة.",
+      "features": [
+        [
+          "temp",
+          "مستشعر تناظري TMP36"
+        ],
+        [
+          "hand",
+          "انقر مع الاستمرار على المستشعر لتدفئته"
+        ],
+        [
+          "calc",
+          "أعداد عشرية باستخدام <code>float</code>"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "مخرج TMP36",
+          "‏10 ملي فولت لكل درجة، مع إزاحة 0.5 فولت."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "يغذّي المستشعر."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "مصباح التنبيه",
+          "عبر 220 أوم."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "المستشعر + المصباح",
+          "عودة مشتركة."
+        ]
+      ],
+      "steps": [
+        "يحوّل <code>raw * 5.0 / 1023.0</code> القراءة الخام إلى فولت.",
+        "يعطي TMP36 جهد 0.5 فولت عند 0 درجة، ثم يزيد 10 ملي فولت لكل درجة.",
+        "لذا فإن <code>(volts - 0.5) * 100.0</code> هي درجة الحرارة بالدرجات المئوية.",
+        "يختار المعامل <code>? :</code> بين HIGH وLOW في سطر واحد."
+      ],
+      "specs": [
+        [
+          "المستشعر",
+          "TMP36"
+        ],
+        [
+          "المجال",
+          "من −40 إلى +125 درجة"
+        ],
+        [
+          "الدقة",
+          "± 2 درجة"
+        ],
+        [
+          "الحساسية",
+          "10 ملي فولت/درجة"
+        ],
+        [
+          "عتبة التنبيه",
+          "30 درجة"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "tmp36",
+          "مستشعر TMP36",
+          "يتبع جهد خرجه درجة الحرارة."
+        ],
+        [
+          "resistor",
+          "مقاومة 220 أوم",
+          "تحمي المصباح."
+        ],
+        [
+          "led",
+          "مصباح LED قياس 5 مم",
+          "تنبيه الحرارة."
+        ]
+      ],
+      "tags": [
+        [
+          "tmp36",
+          "TMP36"
+        ],
+        [
+          "led",
+          "المصباح"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "انقر مع الاستمرار على المستشعر",
+      "challenge": {
+        "title": "إنذار مبكر",
+        "goal": "خفّض عتبة التنبيه إلى 25 درجة، ثم دفّئ المستشعر حتى يضيء المصباح.",
+        "hint": "غيّر <code>celsius &gt; 30</code> إلى <code>celsius &gt; 25</code>."
+      }
+    }
+  },
+  {
+    "slug": "servo",
+    "position": 12,
+    "category": "motion",
+    "code": "#include <Servo.h>\n\nServo arm;\n\nvoid setup() {\n  arm.attach(9);\n}\n\nvoid loop() {\n  for (int angle = 0; angle <= 180; angle += 30) {\n    arm.write(angle);\n    delay(400);\n  }\n  for (int angle = 180; angle >= 0; angle -= 30) {\n    arm.write(angle);\n    delay(400);\n  }\n}",
+    "en": {
+      "title": "Sweep a servo",
+      "subtitle": "Servo motor",
+      "heading": "Sweep a servo",
+      "lede": "A servo motor turns to a precise angle between 0° and 180°. The Servo library handles the pulses: you just give it the angle you want.",
+      "features": [
+        [
+          "lib",
+          "The <code>Servo.h</code> library"
+        ],
+        [
+          "angle",
+          "<code>arm.write(angle)</code> in degrees"
+        ],
+        [
+          "loop",
+          "Two loops: sweep there and back"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#e0a33a",
+          "D9",
+          "Signal (orange)",
+          "1 to 2 ms pulses."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC (red)",
+          "Servo supply."
+        ],
+        [
+          "#5b4636",
+          "GND",
+          "Ground (brown)",
+          "Return."
+        ]
+      ],
+      "steps": [
+        "<code>#include &lt;Servo.h&gt;</code> loads the library and <code>Servo arm;</code> creates the object.",
+        "<code>arm.attach(9)</code> binds the servo to pin 9.",
+        "The first <code>for</code> loop steps 30° at a time up to 180°.",
+        "The second one comes back to 0°, and so on."
+      ],
+      "specs": [
+        [
+          "Servo",
+          "SG90 micro"
+        ],
+        [
+          "Travel",
+          "0–180°"
+        ],
+        [
+          "Torque",
+          "1.8 kg·cm"
+        ],
+        [
+          "Signal",
+          "50 Hz, 1–2 ms"
+        ]
+      ],
+      "parts": [
+        [
+          "servo",
+          "SG90 servo",
+          "Motor, gears and position electronics."
+        ],
+        [
+          "arm",
+          "Servo horn",
+          "The arm that shows the angle."
+        ]
+      ],
+      "tags": [
+        [
+          "servo",
+          "Servo"
+        ],
+        [
+          "pin9",
+          "Pin 9"
+        ]
+      ],
+      "challenge": {
+        "title": "Windshield wiper",
+        "goal": "Sweep only between 45° and 135°.",
+        "hint": "Start the loops at <code>45</code> and stop them at <code>135</code>."
+      }
+    },
+    "fr": {
+      "title": "Balayer avec un servo",
+      "subtitle": "Servomoteur",
+      "heading": "Balayer avec un servo",
+      "lede": "Un servomoteur tourne vers un angle précis entre 0° et 180°. La bibliothèque Servo s’occupe des impulsions : on lui donne juste l’angle voulu.",
+      "features": [
+        [
+          "lib",
+          "La bibliothèque <code>Servo.h</code>"
+        ],
+        [
+          "angle",
+          "<code>arm.write(angle)</code> en degrés"
+        ],
+        [
+          "loop",
+          "Deux boucles : aller puis retour"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#e0a33a",
+          "D9",
+          "Signal (orange)",
+          "Impulsions de 1 à 2 ms."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC (rouge)",
+          "Alimentation du servo."
+        ],
+        [
+          "#5b4636",
+          "GND",
+          "Masse (marron)",
+          "Retour."
+        ]
+      ],
+      "steps": [
+        "<code>#include &lt;Servo.h&gt;</code> charge la bibliothèque, <code>Servo arm;</code> crée l’objet.",
+        "<code>arm.attach(9)</code> relie le servo à la broche 9.",
+        "La première boucle <code>for</code> avance de 30° en 30° jusqu’à 180°.",
+        "La seconde revient à 0°, et ainsi de suite."
+      ],
+      "specs": [
+        [
+          "Servo",
+          "SG90 micro"
+        ],
+        [
+          "Course",
+          "0–180°"
+        ],
+        [
+          "Couple",
+          "1,8 kg·cm"
+        ],
+        [
+          "Signal",
+          "50 Hz, 1–2 ms"
+        ]
+      ],
+      "parts": [
+        [
+          "servo",
+          "Servomoteur SG90",
+          "Moteur, engrenages et électronique de position."
+        ],
+        [
+          "arm",
+          "Palonnier",
+          "Le bras qui montre l’angle."
+        ]
+      ],
+      "tags": [
+        [
+          "servo",
+          "Servo"
+        ],
+        [
+          "pin9",
+          "Broche 9"
+        ]
+      ],
+      "challenge": {
+        "title": "Essuie-glace",
+        "goal": "Balayez uniquement entre 45° et 135°.",
+        "hint": "Faites commencer les boucles à <code>45</code> et s’arrêter à <code>135</code>."
+      }
+    },
+    "es": {
+      "title": "Barrido con un servo",
+      "subtitle": "Servomotor",
+      "heading": "Barrido con un servo",
+      "lede": "Un servomotor gira hasta un ángulo preciso entre 0° y 180°. La biblioteca Servo se encarga de los pulsos: solo hay que indicarle el ángulo.",
+      "features": [
+        [
+          "lib",
+          "La biblioteca <code>Servo.h</code>"
+        ],
+        [
+          "angle",
+          "<code>arm.write(angle)</code> en grados"
+        ],
+        [
+          "loop",
+          "Dos bucles: ida y vuelta"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#e0a33a",
+          "D9",
+          "Señal (naranja)",
+          "Pulsos de 1 a 2 ms."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC (rojo)",
+          "Alimenta el servo."
+        ],
+        [
+          "#5b4636",
+          "GND",
+          "Tierra (marrón)",
+          "Retorno."
+        ]
+      ],
+      "steps": [
+        "<code>#include &lt;Servo.h&gt;</code> carga la biblioteca y <code>Servo arm;</code> crea el objeto.",
+        "<code>arm.attach(9)</code> asocia el servo al pin 9.",
+        "El primer bucle <code>for</code> avanza de 30° en 30° hasta 180°.",
+        "El segundo vuelve a 0°, y así sucesivamente."
+      ],
+      "specs": [
+        [
+          "Servo",
+          "SG90 micro"
+        ],
+        [
+          "Recorrido",
+          "0–180°"
+        ],
+        [
+          "Par",
+          "1,8 kg·cm"
+        ],
+        [
+          "Señal",
+          "50 Hz, 1–2 ms"
+        ]
+      ],
+      "parts": [
+        [
+          "servo",
+          "Servomotor SG90",
+          "Motor, engranajes y electrónica de posición."
+        ],
+        [
+          "arm",
+          "Brazo del servo",
+          "El brazo que muestra el ángulo."
+        ]
+      ],
+      "tags": [
+        [
+          "servo",
+          "Servo"
+        ],
+        [
+          "pin9",
+          "Pin 9"
+        ]
+      ],
+      "challenge": {
+        "title": "Limpiaparabrisas",
+        "goal": "Barre solo entre 45° y 135°.",
+        "hint": "Haz que los bucles empiecen en <code>45</code> y terminen en <code>135</code>."
+      }
+    },
+    "ar": {
+      "title": "حرّك المحرك المؤازر",
+      "subtitle": "المحرك المؤازر (سيرفو)",
+      "heading": "حرّك المحرك المؤازر",
+      "lede": "يدور المحرك المؤازر إلى زاوية دقيقة بين 0 و180 درجة. تتكفل مكتبة Servo بالنبضات: ما عليك سوى إعطائها الزاوية المطلوبة.",
+      "features": [
+        [
+          "lib",
+          "مكتبة <code>Servo.h</code>"
+        ],
+        [
+          "angle",
+          "<code>arm.write(angle)</code> بالدرجات"
+        ],
+        [
+          "loop",
+          "حلقتان: ذهابًا وإيابًا"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#e0a33a",
+          "D9",
+          "الإشارة (برتقالي)",
+          "نبضات من 1 إلى 2 ملي ثانية."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC (أحمر)",
+          "يغذّي المحرك."
+        ],
+        [
+          "#5b4636",
+          "GND",
+          "الأرضي (بني)",
+          "العودة."
+        ]
+      ],
+      "steps": [
+        "يحمّل <code>#include &lt;Servo.h&gt;</code> المكتبة، وينشئ <code>Servo arm;</code> الكائن.",
+        "يربط <code>arm.attach(9)</code> المحرك بالمنفذ 9.",
+        "تتقدم حلقة <code>for</code> الأولى بخطوات 30 درجة حتى 180.",
+        "وتعود الثانية إلى 0 درجة، وهكذا."
+      ],
+      "specs": [
+        [
+          "المحرك",
+          "SG90 صغير"
+        ],
+        [
+          "المدى",
+          "0–180°"
+        ],
+        [
+          "العزم",
+          "1.8 كغ·سم"
+        ],
+        [
+          "الإشارة",
+          "50 هرتز، 1–2 ملي ثانية"
+        ]
+      ],
+      "parts": [
+        [
+          "servo",
+          "محرك مؤازر SG90",
+          "محرك وتروس وإلكترونيات تحديد الموضع."
+        ],
+        [
+          "arm",
+          "ذراع المحرك",
+          "الذراع الذي يُظهر الزاوية."
+        ]
+      ],
+      "tags": [
+        [
+          "servo",
+          "المحرك المؤازر"
+        ],
+        [
+          "pin9",
+          "المنفذ 9"
+        ]
+      ],
+      "challenge": {
+        "title": "ماسحة الزجاج",
+        "goal": "اجعل الحركة بين 45° و135° فقط.",
+        "hint": "ابدأ الحلقتين من <code>45</code> وأوقفهما عند <code>135</code>."
+      }
+    }
+  },
+  {
+    "slug": "stepper",
+    "position": 13,
+    "category": "motion",
+    "code": "#include <Stepper.h>\n\nconst int STEPS = 2048;\nStepper wheel(STEPS, 8, 10, 9, 11);\n\nvoid setup() {\n  wheel.setSpeed(10);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  Serial.println(\"Clockwise\");\n  wheel.step(STEPS / 4);\n  delay(500);\n  Serial.println(\"Counter-clockwise\");\n  wheel.step(-STEPS / 4);\n  delay(500);\n}",
+    "en": {
+      "title": "Spin the wheel",
+      "subtitle": "Stepper motor",
+      "heading": "Spin the wheel",
+      "lede": "A stepper motor moves in tiny, precise steps. With its ULN2003 driver it turns the wheel a quarter turn one way, then back the other way.",
+      "features": [
+        [
+          "step",
+          "28BYJ-48 motor: 2048 steps per turn"
+        ],
+        [
+          "chip",
+          "ULN2003 driver on pins 8 to 11"
+        ],
+        [
+          "lib",
+          "The <code>Stepper.h</code> library"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D8–D11",
+          "IN1–IN4",
+          "The four coils."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Driver +",
+          "Supply."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Driver −",
+          "Return."
+        ]
+      ],
+      "steps": [
+        "<code>Stepper wheel(STEPS, 8, 10, 9, 11)</code> describes the motor and its pins.",
+        "<code>setSpeed(10)</code> sets 10 revolutions per minute.",
+        "<code>wheel.step(STEPS / 4)</code> takes 512 steps: a quarter turn.",
+        "A negative number turns the other way."
+      ],
+      "specs": [
+        [
+          "Motor",
+          "28BYJ-48, 5 V"
+        ],
+        [
+          "Steps per turn",
+          "2048 (geared)"
+        ],
+        [
+          "Driver",
+          "ULN2003"
+        ],
+        [
+          "Speed",
+          "10 rpm"
+        ]
+      ],
+      "parts": [
+        [
+          "stepper",
+          "28BYJ-48 motor",
+          "Moves step by step."
+        ],
+        [
+          "driver",
+          "ULN2003 driver",
+          "Feeds current to the coils."
+        ],
+        [
+          "wheel",
+          "Wheel",
+          "Shows the rotation."
+        ]
+      ],
+      "tags": [
+        [
+          "stepper",
+          "Stepper"
+        ],
+        [
+          "driver",
+          "ULN2003"
+        ],
+        [
+          "wheel",
+          "Wheel"
+        ]
+      ],
+      "challenge": {
+        "title": "Full circle",
+        "goal": "Make the wheel turn one complete revolution in one go.",
+        "hint": "<code>wheel.step(STEPS);</code> turns exactly one revolution."
+      }
+    },
+    "fr": {
+      "title": "Faire tourner la roue",
+      "subtitle": "Moteur pas à pas",
+      "heading": "Faire tourner la roue",
+      "lede": "Un moteur pas à pas avance par petits crans très précis. Avec son driver ULN2003, il fait tourner la roue d’un quart de tour dans un sens, puis dans l’autre.",
+      "features": [
+        [
+          "step",
+          "Moteur 28BYJ-48 : 2048 pas par tour"
+        ],
+        [
+          "chip",
+          "Driver ULN2003 sur les broches 8 à 11"
+        ],
+        [
+          "lib",
+          "La bibliothèque <code>Stepper.h</code>"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D8–D11",
+          "IN1–IN4",
+          "Les quatre bobines."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Driver +",
+          "Alimentation."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Driver −",
+          "Retour."
+        ]
+      ],
+      "steps": [
+        "<code>Stepper wheel(STEPS, 8, 10, 9, 11)</code> décrit le moteur et ses broches.",
+        "<code>setSpeed(10)</code> fixe la vitesse à 10 tours par minute.",
+        "<code>wheel.step(STEPS / 4)</code> fait 512 pas : un quart de tour.",
+        "Un nombre négatif fait tourner dans l’autre sens."
+      ],
+      "specs": [
+        [
+          "Moteur",
+          "28BYJ-48, 5 V"
+        ],
+        [
+          "Pas par tour",
+          "2048 (avec réducteur)"
+        ],
+        [
+          "Driver",
+          "ULN2003"
+        ],
+        [
+          "Vitesse",
+          "10 tr/min"
+        ]
+      ],
+      "parts": [
+        [
+          "stepper",
+          "Moteur 28BYJ-48",
+          "Avance cran par cran."
+        ],
+        [
+          "driver",
+          "Driver ULN2003",
+          "Fournit le courant aux bobines."
+        ],
+        [
+          "wheel",
+          "Roue",
+          "Montre la rotation."
+        ]
+      ],
+      "tags": [
+        [
+          "stepper",
+          "Moteur pas à pas"
+        ],
+        [
+          "driver",
+          "ULN2003"
+        ],
+        [
+          "wheel",
+          "Roue"
+        ]
+      ],
+      "challenge": {
+        "title": "Tour complet",
+        "goal": "Faites faire à la roue un tour complet d’un seul coup.",
+        "hint": "<code>wheel.step(STEPS);</code> fait exactement un tour."
+      }
+    },
+    "es": {
+      "title": "Hacer girar la rueda",
+      "subtitle": "Motor paso a paso",
+      "heading": "Hacer girar la rueda",
+      "lede": "Un motor paso a paso avanza en pequeños pasos muy precisos. Con su driver ULN2003, gira la rueda un cuarto de vuelta en un sentido y luego en el otro.",
+      "features": [
+        [
+          "step",
+          "Motor 28BYJ-48: 2048 pasos por vuelta"
+        ],
+        [
+          "chip",
+          "Driver ULN2003 en los pines 8 a 11"
+        ],
+        [
+          "lib",
+          "La biblioteca <code>Stepper.h</code>"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D8–D11",
+          "IN1–IN4",
+          "Las cuatro bobinas."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "Driver +",
+          "Alimentación."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Driver −",
+          "Retorno."
+        ]
+      ],
+      "steps": [
+        "<code>Stepper wheel(STEPS, 8, 10, 9, 11)</code> describe el motor y sus pines.",
+        "<code>setSpeed(10)</code> fija la velocidad en 10 vueltas por minuto.",
+        "<code>wheel.step(STEPS / 4)</code> da 512 pasos: un cuarto de vuelta.",
+        "Un número negativo hace girar en el otro sentido."
+      ],
+      "specs": [
+        [
+          "Motor",
+          "28BYJ-48, 5 V"
+        ],
+        [
+          "Pasos por vuelta",
+          "2048 (con reductora)"
+        ],
+        [
+          "Driver",
+          "ULN2003"
+        ],
+        [
+          "Velocidad",
+          "10 rpm"
+        ]
+      ],
+      "parts": [
+        [
+          "stepper",
+          "Motor 28BYJ-48",
+          "Avanza paso a paso."
+        ],
+        [
+          "driver",
+          "Driver ULN2003",
+          "Suministra corriente a las bobinas."
+        ],
+        [
+          "wheel",
+          "Rueda",
+          "Muestra la rotación."
+        ]
+      ],
+      "tags": [
+        [
+          "stepper",
+          "Motor paso a paso"
+        ],
+        [
+          "driver",
+          "ULN2003"
+        ],
+        [
+          "wheel",
+          "Rueda"
+        ]
+      ],
+      "challenge": {
+        "title": "Vuelta completa",
+        "goal": "Haz que la rueda dé una vuelta completa de una sola vez.",
+        "hint": "<code>wheel.step(STEPS);</code> da exactamente una vuelta."
+      }
+    },
+    "ar": {
+      "title": "أدِر العجلة",
+      "subtitle": "محرك خطوي",
+      "heading": "أدِر العجلة",
+      "lede": "يتقدم المحرك الخطوي بخطوات صغيرة ودقيقة جدًا. مع مشغّله ULN2003 يدير العجلة ربع دورة في اتجاه ثم في الاتجاه الآخر.",
+      "features": [
+        [
+          "step",
+          "محرك 28BYJ-48: ‏2048 خطوة لكل دورة"
+        ],
+        [
+          "chip",
+          "مشغّل ULN2003 على المنافذ من 8 إلى 11"
+        ],
+        [
+          "lib",
+          "مكتبة <code>Stepper.h</code>"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D8–D11",
+          "IN1–IN4",
+          "الملفات الأربعة."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "المشغّل +",
+          "التغذية."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "المشغّل −",
+          "العودة."
+        ]
+      ],
+      "steps": [
+        "يصف <code>Stepper wheel(STEPS, 8, 10, 9, 11)</code> المحرك ومنافذه.",
+        "يضبط <code>setSpeed(10)</code> السرعة على 10 دورات في الدقيقة.",
+        "ينفّذ <code>wheel.step(STEPS / 4)</code> ‏512 خطوة: ربع دورة.",
+        "العدد السالب يدير المحرك في الاتجاه المعاكس."
+      ],
+      "specs": [
+        [
+          "المحرك",
+          "28BYJ-48، ‏5 فولت"
+        ],
+        [
+          "الخطوات لكل دورة",
+          "2048 (مع علبة تروس)"
+        ],
+        [
+          "المشغّل",
+          "ULN2003"
+        ],
+        [
+          "السرعة",
+          "10 دورات/دقيقة"
+        ]
+      ],
+      "parts": [
+        [
+          "stepper",
+          "محرك 28BYJ-48",
+          "يتقدم خطوة بخطوة."
+        ],
+        [
+          "driver",
+          "مشغّل ULN2003",
+          "يمد الملفات بالتيار."
+        ],
+        [
+          "wheel",
+          "العجلة",
+          "تُظهر الدوران."
+        ]
+      ],
+      "tags": [
+        [
+          "stepper",
+          "المحرك الخطوي"
+        ],
+        [
+          "driver",
+          "ULN2003"
+        ],
+        [
+          "wheel",
+          "العجلة"
+        ]
+      ],
+      "challenge": {
+        "title": "دورة كاملة",
+        "goal": "اجعل العجلة تدور دورة كاملة دفعة واحدة.",
+        "hint": "ينفّذ <code>wheel.step(STEPS);</code> دورة واحدة بالضبط."
+      }
+    }
+  },
+  {
+    "slug": "plant",
+    "position": 14,
+    "category": "projects",
+    "code": "const int SOIL_PIN = A0;\nconst int LED_PIN = 13;\nconst int DRY = 350;\n\nvoid setup() {\n  pinMode(LED_PIN, OUTPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int moisture = analogRead(SOIL_PIN);\n  Serial.print(\"Moisture: \");\n  Serial.println(moisture);\n  if (moisture < DRY) {\n    digitalWrite(LED_PIN, HIGH);\n  } else {\n    digitalWrite(LED_PIN, LOW);\n  }\n  delay(1000);\n}",
+    "en": {
+      "title": "Smart plant",
+      "subtitle": "Smart plant monitor",
+      "heading": "Smart plant",
+      "lede": "A moisture probe in the pot measures how wet the soil is. When it gets too dry, the red LED reminds you to water.",
+      "features": [
+        [
+          "drop",
+          "Capacitive moisture probe on A0"
+        ],
+        [
+          "hand",
+          "Click the pot to water it"
+        ],
+        [
+          "term",
+          "<code>Serial.print()</code> and <code>println()</code>"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Probe AOUT",
+          "Wetter soil, higher value."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "Probe supply."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "“Water me” alert."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Probe + LED",
+          "Shared return."
+        ]
+      ],
+      "steps": [
+        "<code>analogRead(SOIL_PIN)</code> measures soil moisture.",
+        "<code>Serial.print()</code> writes without a newline, <code>println()</code> ends the line.",
+        "Below the <code>DRY</code> threshold the LED lights.",
+        "The soil slowly dries in the simulation: water it to bring the value back up!"
+      ],
+      "specs": [
+        [
+          "Probe",
+          "Capacitive v1.2"
+        ],
+        [
+          "Output",
+          "0–3 V analog"
+        ],
+        [
+          "Dry threshold",
+          "350 / 1023"
+        ],
+        [
+          "Sampling",
+          "Every second"
+        ]
+      ],
+      "parts": [
+        [
+          "pot-plant",
+          "Flower pot",
+          "The plant to watch."
+        ],
+        [
+          "soil",
+          "Moisture probe",
+          "Measures water in the soil."
+        ],
+        [
+          "led",
+          "5 mm LED",
+          "Watering reminder."
+        ]
+      ],
+      "tags": [
+        [
+          "soil",
+          "Probe"
+        ],
+        [
+          "pot-plant",
+          "Plant"
+        ],
+        [
+          "led",
+          "LED"
+        ]
+      ],
+      "hint": "Click the pot to water it",
+      "challenge": {
+        "title": "Water me!",
+        "goal": "When the soil is dry, print a message containing the word <code>WATER</code>.",
+        "hint": "Inside the <code>if (moisture &lt; DRY)</code> block, add <code>Serial.println(\"WATER ME\");</code>."
+      }
+    },
+    "fr": {
+      "title": "Plante connectée",
+      "subtitle": "Moniteur de plante connectée",
+      "heading": "Plante connectée",
+      "lede": "Une sonde d’humidité plantée dans le pot mesure l’eau du sol. Quand la terre devient trop sèche, la LED rouge vous rappelle d’arroser.",
+      "features": [
+        [
+          "drop",
+          "Sonde d’humidité capacitive sur A0"
+        ],
+        [
+          "hand",
+          "Cliquez sur l’arrosoir… ou sur le pot pour arroser"
+        ],
+        [
+          "term",
+          "<code>Serial.print()</code> et <code>println()</code>"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "AOUT de la sonde",
+          "Plus c’est humide, plus la valeur monte."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "Alimentation de la sonde."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "Alerte « à arroser »."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Sonde + LED",
+          "Retour commun."
+        ]
+      ],
+      "steps": [
+        "<code>analogRead(SOIL_PIN)</code> mesure l’humidité de la terre.",
+        "<code>Serial.print()</code> écrit sans retour à la ligne, <code>println()</code> termine la ligne.",
+        "Sous le seuil <code>DRY</code>, la LED s’allume.",
+        "Le sol sèche peu à peu dans la simulation : arrosez pour remonter la valeur !"
+      ],
+      "specs": [
+        [
+          "Sonde",
+          "Capacitive v1.2"
+        ],
+        [
+          "Sortie",
+          "Analogique 0–3 V"
+        ],
+        [
+          "Seuil sec",
+          "350 / 1023"
+        ],
+        [
+          "Mesure",
+          "Toutes les secondes"
+        ]
+      ],
+      "parts": [
+        [
+          "pot-plant",
+          "Pot de fleur",
+          "La plante à surveiller."
+        ],
+        [
+          "soil",
+          "Sonde d’humidité",
+          "Mesure l’eau dans la terre."
+        ],
+        [
+          "led",
+          "LED 5 mm",
+          "Rappel d’arrosage."
+        ]
+      ],
+      "tags": [
+        [
+          "soil",
+          "Sonde"
+        ],
+        [
+          "pot-plant",
+          "Plante"
+        ],
+        [
+          "led",
+          "LED"
+        ]
+      ],
+      "hint": "Cliquez sur le pot pour arroser",
+      "challenge": {
+        "title": "Arrosez-moi !",
+        "goal": "Quand la terre est sèche, affichez un message contenant le mot <code>WATER</code>.",
+        "hint": "Dans le bloc <code>if (moisture &lt; DRY)</code>, ajoutez <code>Serial.println(\"WATER ME\");</code>."
+      }
+    },
+    "es": {
+      "title": "Planta conectada",
+      "subtitle": "Monitor de planta conectada",
+      "heading": "Planta conectada",
+      "lede": "Una sonda de humedad clavada en la maceta mide el agua del suelo. Cuando la tierra está demasiado seca, el LED rojo te recuerda que debes regar.",
+      "features": [
+        [
+          "drop",
+          "Sonda de humedad capacitiva en A0"
+        ],
+        [
+          "hand",
+          "Haz clic en la maceta para regarla"
+        ],
+        [
+          "term",
+          "<code>Serial.print()</code> y <code>println()</code>"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "AOUT de la sonda",
+          "Cuanto más húmedo, mayor el valor."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "Alimenta la sonda."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "LED",
+          "Alerta de riego."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Sonda + LED",
+          "Retorno común."
+        ]
+      ],
+      "steps": [
+        "<code>analogRead(SOIL_PIN)</code> mide la humedad de la tierra.",
+        "<code>Serial.print()</code> escribe sin salto de línea; <code>println()</code> termina la línea.",
+        "Por debajo del umbral <code>DRY</code>, el LED se enciende.",
+        "En la simulación la tierra se seca poco a poco: ¡riega para subir el valor!"
+      ],
+      "specs": [
+        [
+          "Sonda",
+          "Capacitiva v1.2"
+        ],
+        [
+          "Salida",
+          "Analógica 0–3 V"
+        ],
+        [
+          "Umbral seco",
+          "350 / 1023"
+        ],
+        [
+          "Medición",
+          "Cada segundo"
+        ]
+      ],
+      "parts": [
+        [
+          "pot-plant",
+          "Maceta",
+          "La planta que hay que vigilar."
+        ],
+        [
+          "soil",
+          "Sonda de humedad",
+          "Mide el agua de la tierra."
+        ],
+        [
+          "led",
+          "LED de 5 mm",
+          "Recordatorio de riego."
+        ]
+      ],
+      "tags": [
+        [
+          "soil",
+          "Sonda"
+        ],
+        [
+          "pot-plant",
+          "Planta"
+        ],
+        [
+          "led",
+          "LED"
+        ]
+      ],
+      "hint": "Haz clic en la maceta para regarla",
+      "challenge": {
+        "title": "¡Riégame!",
+        "goal": "Cuando la tierra esté seca, muestra un mensaje que contenga la palabra <code>WATER</code>.",
+        "hint": "Dentro del bloque <code>if (moisture &lt; DRY)</code>, añade <code>Serial.println(\"WATER ME\");</code>."
+      }
+    },
+    "ar": {
+      "title": "نبتة ذكية",
+      "subtitle": "مراقب النبتة الذكي",
+      "heading": "نبتة ذكية",
+      "lede": "يقيس مسبار رطوبة مغروس في الأصيص كمية الماء في التربة. وعندما تجف التربة كثيرًا يذكّرك المصباح الأحمر بالسقي.",
+      "features": [
+        [
+          "drop",
+          "مسبار رطوبة سعوي على A0"
+        ],
+        [
+          "hand",
+          "انقر على الأصيص لسقيه"
+        ],
+        [
+          "term",
+          "<code>Serial.print()</code> و<code>println()</code>"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "مخرج المسبار AOUT",
+          "كلما زادت الرطوبة ارتفعت القيمة."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "يغذّي المسبار."
+        ],
+        [
+          "#e0a33a",
+          "D13",
+          "المصباح",
+          "تنبيه «حان وقت السقي»."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "المسبار + المصباح",
+          "عودة مشتركة."
+        ]
+      ],
+      "steps": [
+        "يقيس <code>analogRead(SOIL_PIN)</code> رطوبة التربة.",
+        "يكتب <code>Serial.print()</code> دون سطر جديد، وينهي <code>println()</code> السطر.",
+        "تحت العتبة <code>DRY</code> يضيء المصباح.",
+        "تجف التربة تدريجيًا في المحاكاة: اسقِها لترتفع القيمة!"
+      ],
+      "specs": [
+        [
+          "المسبار",
+          "سعوي الإصدار 1.2"
+        ],
+        [
+          "المخرج",
+          "تناظري 0–3 فولت"
+        ],
+        [
+          "عتبة الجفاف",
+          "350 / 1023"
+        ],
+        [
+          "القياس",
+          "كل ثانية"
+        ]
+      ],
+      "parts": [
+        [
+          "pot-plant",
+          "أصيص الزهور",
+          "النبتة المراد مراقبتها."
+        ],
+        [
+          "soil",
+          "مسبار الرطوبة",
+          "يقيس الماء في التربة."
+        ],
+        [
+          "led",
+          "مصباح LED قياس 5 مم",
+          "تذكير بالسقي."
+        ]
+      ],
+      "tags": [
+        [
+          "soil",
+          "المسبار"
+        ],
+        [
+          "pot-plant",
+          "النبتة"
+        ],
+        [
+          "led",
+          "المصباح"
+        ]
+      ],
+      "hint": "انقر على الأصيص لسقيه",
+      "challenge": {
+        "title": "اسقِني!",
+        "goal": "عندما تجف التربة، اطبع رسالة تحتوي على الكلمة <code>WATER</code>.",
+        "hint": "داخل الكتلة <code>if (moisture &lt; DRY)</code> أضف <code>Serial.println(\"WATER ME\");</code>."
+      }
+    }
+  },
+  {
+    "slug": "force",
+    "position": 15,
+    "category": "sensors",
+    "code": "const int FSR_PIN = A0;\nconst int LEDS[] = {11, 12, 13};\n\nvoid setup() {\n  for (int i = 0; i < 3; i++) {\n    pinMode(LEDS[i], OUTPUT);\n  }\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int force = analogRead(FSR_PIN);\n  int level = map(force, 0, 1023, 0, 3);\n  for (int i = 0; i < 3; i++) {\n    digitalWrite(LEDS[i], i < level ? HIGH : LOW);\n  }\n  Serial.println(force);\n  delay(100);\n}",
+    "en": {
+      "title": "Measure force",
+      "subtitle": "Test your strength",
+      "heading": "Measure force",
+      "lede": "A force-sensitive resistor (FSR) gets less resistive when pressed. Three LEDs make a gauge: press hard to light them all!",
+      "features": [
+        [
+          "force",
+          "FSR 402 force sensor"
+        ],
+        [
+          "hand",
+          "Hold the click: force builds up over time"
+        ],
+        [
+          "bars",
+          "A three-LED gauge with <code>map()</code>"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Divider midpoint",
+          "Between the FSR and the 10 kΩ."
+        ],
+        [
+          "#2a56a3",
+          "D11–D13",
+          "Gauge",
+          "Three LEDs, each through 220 Ω."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "FSR",
+          "Top of the divider."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "10 kΩ + LEDs",
+          "Shared return."
+        ]
+      ],
+      "steps": [
+        "The harder you press, the higher the voltage on A0.",
+        "<code>map(force, 0, 1023, 0, 3)</code> turns the reading into a level from 0 to 3.",
+        "The loop lights every LED whose index is below the level.",
+        "The serial monitor shows the raw force."
+      ],
+      "specs": [
+        [
+          "Sensor",
+          "FSR 402, Ø 12.7 mm"
+        ],
+        [
+          "Range",
+          "≈ 0.2 to 20 N"
+        ],
+        [
+          "Resting resistance",
+          "> 10 MΩ"
+        ],
+        [
+          "Gauge",
+          "3 LEDs"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "fsr",
+          "FSR sensor",
+          "Resistance drops under pressure."
+        ],
+        [
+          "led",
+          "Gauge LEDs",
+          "Show the force level."
+        ]
+      ],
+      "tags": [
+        [
+          "fsr",
+          "Force sensor"
+        ],
+        [
+          "led",
+          "Gauge"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "Hold a click on the sensor",
+      "challenge": {
+        "title": "Read the gauge",
+        "goal": "Print the gauge level as text, for example <code>Level: 2</code>.",
+        "hint": "Use <code>Serial.print(\"Level: \");</code> then <code>Serial.println(level);</code>."
+      }
+    },
+    "fr": {
+      "title": "Mesurer la force",
+      "subtitle": "Testez votre force",
+      "heading": "Mesurer la force",
+      "lede": "Un capteur de force résistif (FSR) devient moins résistant quand on appuie dessus. Trois LED forment une jauge : appuyez fort pour toutes les allumer !",
+      "features": [
+        [
+          "force",
+          "Capteur de force FSR 402"
+        ],
+        [
+          "hand",
+          "Maintenez le clic : la force augmente avec le temps"
+        ],
+        [
+          "bars",
+          "Une jauge de trois LED avec <code>map()</code>"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Point milieu",
+          "Entre le FSR et la 10 kΩ."
+        ],
+        [
+          "#2a56a3",
+          "D11–D13",
+          "Jauge",
+          "Trois LED, chacune via 220 Ω."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "FSR",
+          "Haut du diviseur."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "10 kΩ + LED",
+          "Retour commun."
+        ]
+      ],
+      "steps": [
+        "Plus on appuie, plus la tension sur A0 monte.",
+        "<code>map(force, 0, 1023, 0, 3)</code> transforme la mesure en niveau de 0 à 3.",
+        "La boucle allume les LED dont l’indice est inférieur au niveau.",
+        "Le moniteur série affiche la force brute."
+      ],
+      "specs": [
+        [
+          "Capteur",
+          "FSR 402, Ø 12,7 mm"
+        ],
+        [
+          "Plage",
+          "≈ 0,2 à 20 N"
+        ],
+        [
+          "Résistance au repos",
+          "> 10 MΩ"
+        ],
+        [
+          "Jauge",
+          "3 LED"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "fsr",
+          "Capteur FSR",
+          "Sa résistance baisse sous la pression."
+        ],
+        [
+          "led",
+          "LED de jauge",
+          "Indiquent le niveau de force."
+        ]
+      ],
+      "tags": [
+        [
+          "fsr",
+          "Capteur de force"
+        ],
+        [
+          "led",
+          "Jauge"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "Maintenez le clic sur le capteur",
+      "challenge": {
+        "title": "Lisez la jauge",
+        "goal": "Affichez le niveau de la jauge en texte, par exemple <code>Level: 2</code>.",
+        "hint": "Utilisez <code>Serial.print(\"Level: \");</code> puis <code>Serial.println(level);</code>."
+      }
+    },
+    "es": {
+      "title": "Medir la fuerza",
+      "subtitle": "Pon a prueba tu fuerza",
+      "heading": "Medir la fuerza",
+      "lede": "Un sensor de fuerza resistivo (FSR) reduce su resistencia al presionarlo. Tres LED forman un indicador: ¡presiona fuerte para encenderlos todos!",
+      "features": [
+        [
+          "force",
+          "Sensor de fuerza FSR 402"
+        ],
+        [
+          "hand",
+          "Mantén el clic: la fuerza aumenta con el tiempo"
+        ],
+        [
+          "bars",
+          "Un indicador de tres LED con <code>map()</code>"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "Punto medio",
+          "Entre el FSR y la de 10 kΩ."
+        ],
+        [
+          "#2a56a3",
+          "D11–D13",
+          "Indicador",
+          "Tres LED, cada uno a través de 220 Ω."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "FSR",
+          "Parte alta del divisor."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "10 kΩ + LED",
+          "Retorno común."
+        ]
+      ],
+      "steps": [
+        "Cuanto más presionas, más sube la tensión en A0.",
+        "<code>map(force, 0, 1023, 0, 3)</code> convierte la lectura en un nivel de 0 a 3.",
+        "El bucle enciende los LED cuyo índice es menor que el nivel.",
+        "El monitor serie muestra la fuerza en bruto."
+      ],
+      "specs": [
+        [
+          "Sensor",
+          "FSR 402, Ø 12,7 mm"
+        ],
+        [
+          "Rango",
+          "≈ 0,2 a 20 N"
+        ],
+        [
+          "Resistencia en reposo",
+          "> 10 MΩ"
+        ],
+        [
+          "Indicador",
+          "3 LED"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "fsr",
+          "Sensor FSR",
+          "Su resistencia baja con la presión."
+        ],
+        [
+          "led",
+          "LED del indicador",
+          "Muestran el nivel de fuerza."
+        ]
+      ],
+      "tags": [
+        [
+          "fsr",
+          "Sensor de fuerza"
+        ],
+        [
+          "led",
+          "Indicador"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "Mantén el clic sobre el sensor",
+      "challenge": {
+        "title": "Lee el indicador",
+        "goal": "Muestra el nivel del indicador como texto, por ejemplo <code>Level: 2</code>.",
+        "hint": "Usa <code>Serial.print(\"Level: \");</code> y luego <code>Serial.println(level);</code>."
+      }
+    },
+    "ar": {
+      "title": "قِس القوة",
+      "subtitle": "اختبر قوتك",
+      "heading": "قِس القوة",
+      "lede": "تنخفض مقاومة مستشعر القوة (FSR) عند الضغط عليه. تشكّل ثلاثة مصابيح مقياسًا: اضغط بقوة لتضيئها كلها!",
+      "features": [
+        [
+          "force",
+          "مستشعر القوة FSR 402"
+        ],
+        [
+          "hand",
+          "انقر مع الاستمرار: تزداد القوة مع الوقت"
+        ],
+        [
+          "bars",
+          "مقياس من ثلاثة مصابيح باستخدام <code>map()</code>"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#1aa3a1",
+          "A0",
+          "النقطة الوسطى",
+          "بين FSR ومقاومة 10 كيلو أوم."
+        ],
+        [
+          "#2a56a3",
+          "D11–D13",
+          "المقياس",
+          "ثلاثة مصابيح، كل منها عبر 220 أوم."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "FSR",
+          "أعلى المقسّم."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "10 كيلو أوم + المصابيح",
+          "عودة مشتركة."
+        ]
+      ],
+      "steps": [
+        "كلما زاد الضغط ارتفع الجهد على A0.",
+        "يحوّل <code>map(force, 0, 1023, 0, 3)</code> القراءة إلى مستوى من 0 إلى 3.",
+        "تضيء الحلقة المصابيح التي يقل رقمها عن المستوى.",
+        "تعرض الشاشة التسلسلية القوة الخام."
+      ],
+      "specs": [
+        [
+          "المستشعر",
+          "FSR 402، قطر 12.7 مم"
+        ],
+        [
+          "المجال",
+          "≈ 0.2 إلى 20 نيوتن"
+        ],
+        [
+          "المقاومة في الراحة",
+          "أكثر من 10 ميغا أوم"
+        ],
+        [
+          "المقياس",
+          "3 مصابيح"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "fsr",
+          "مستشعر FSR",
+          "تنخفض مقاومته تحت الضغط."
+        ],
+        [
+          "led",
+          "مصابيح المقياس",
+          "تُظهر مستوى القوة."
+        ]
+      ],
+      "tags": [
+        [
+          "fsr",
+          "مستشعر القوة"
+        ],
+        [
+          "led",
+          "المقياس"
+        ],
+        [
+          "a0",
+          "A0"
+        ]
+      ],
+      "hint": "انقر مع الاستمرار على المستشعر",
+      "challenge": {
+        "title": "اقرأ المقياس",
+        "goal": "اطبع مستوى المقياس كنص، مثل <code>Level: 2</code>.",
+        "hint": "استخدم <code>Serial.print(\"Level: \");</code> ثم <code>Serial.println(level);</code>."
+      }
+    }
+  },
+  {
+    "slug": "project",
+    "position": 16,
+    "category": "projects",
+    "code": "const int TRIG = 9;\nconst int ECHO = 10;\nconst int BUZZER = 8;\n\nvoid setup() {\n  pinMode(TRIG, OUTPUT);\n  pinMode(ECHO, INPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  digitalWrite(TRIG, HIGH);\n  delayMicroseconds(10);\n  digitalWrite(TRIG, LOW);\n  long echo = pulseIn(ECHO, HIGH);\n  int cm = echo / 58;\n  Serial.println(cm);\n  if (cm < 50) {\n    tone(BUZZER, 880, 60);\n    delay(cm * 8);\n  }\n  delay(60);\n}",
+    "en": {
+      "title": "Build a project",
+      "subtitle": "Parking sensor",
+      "heading": "Parking sensor",
+      "lede": "The final project brings everything together: an ultrasonic sensor measures the distance to an obstacle and the buzzer beeps faster as it gets closer.",
+      "features": [
+        [
+          "radar",
+          "HC-SR04 ultrasonic sensor"
+        ],
+        [
+          "hand",
+          "Drag the block to bring it closer"
+        ],
+        [
+          "note",
+          "Beeps whose rhythm depends on distance"
+        ]
+      ],
+      "pinoutSub": "The wires in this build.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D9",
+          "TRIG",
+          "Fires an ultrasonic burst."
+        ],
+        [
+          "#1aa3a1",
+          "D10",
+          "ECHO",
+          "Round-trip duration."
+        ],
+        [
+          "#c0652d",
+          "D8",
+          "Buzzer +",
+          "The beeps."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "Sensor supply."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Sensor + buzzer",
+          "Shared return."
+        ]
+      ],
+      "steps": [
+        "A 10 µs pulse on <code>TRIG</code> sends a 40 kHz ultrasonic burst.",
+        "<code>pulseIn(ECHO, HIGH)</code> measures the round trip in microseconds.",
+        "Dividing by 58 gives the distance in centimetres.",
+        "Under 50 cm, <code>tone()</code> beeps, and the pause shrinks as the obstacle gets closer."
+      ],
+      "specs": [
+        [
+          "Sensor",
+          "HC-SR04"
+        ],
+        [
+          "Range",
+          "2 – 400 cm"
+        ],
+        [
+          "Accuracy",
+          "≈ 3 mm"
+        ],
+        [
+          "Frequency",
+          "40 kHz"
+        ],
+        [
+          "Alert",
+          "< 50 cm"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Breadboard",
+          "Connects parts without soldering."
+        ],
+        [
+          "ultrasonic",
+          "HC-SR04 sensor",
+          "Sends and listens for ultrasound."
+        ],
+        [
+          "buzzer",
+          "Piezo buzzer",
+          "Beeps by distance."
+        ],
+        [
+          "obstacle",
+          "Obstacle",
+          "The wall behind the car."
+        ]
+      ],
+      "tags": [
+        [
+          "ultrasonic",
+          "Ultrasonic"
+        ],
+        [
+          "buzzer",
+          "Buzzer"
+        ],
+        [
+          "obstacle",
+          "Obstacle"
+        ]
+      ],
+      "hint": "Drag the obstacle",
+      "challenge": {
+        "title": "Talk in units",
+        "goal": "Print the distance with its unit, for example <code>42 cm</code>.",
+        "hint": "Replace <code>Serial.println(cm);</code> with <code>Serial.print(cm);</code> and <code>Serial.println(\" cm\");</code>."
+      }
+    },
+    "fr": {
+      "title": "Construire un projet",
+      "subtitle": "Radar de recul",
+      "heading": "Radar de recul",
+      "lede": "Le projet final réunit tout ce que vous avez appris : un capteur à ultrasons mesure la distance d’un obstacle et le buzzer bipe de plus en plus vite à mesure qu’il approche.",
+      "features": [
+        [
+          "radar",
+          "Capteur à ultrasons HC-SR04"
+        ],
+        [
+          "hand",
+          "Faites glisser le bloc pour le rapprocher"
+        ],
+        [
+          "note",
+          "Des bips dont le rythme dépend de la distance"
+        ]
+      ],
+      "pinoutSub": "Les fils de ce montage.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D9",
+          "TRIG",
+          "Déclenche une salve d’ultrasons."
+        ],
+        [
+          "#1aa3a1",
+          "D10",
+          "ECHO",
+          "Durée de l’aller-retour."
+        ],
+        [
+          "#c0652d",
+          "D8",
+          "Buzzer +",
+          "Les bips."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "Alimentation du capteur."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Capteur + buzzer",
+          "Retour commun."
+        ]
+      ],
+      "steps": [
+        "Une impulsion de 10 µs sur <code>TRIG</code> envoie une salve d’ultrasons à 40 kHz.",
+        "<code>pulseIn(ECHO, HIGH)</code> mesure le temps de l’aller-retour en microsecondes.",
+        "Diviser par 58 donne la distance en centimètres.",
+        "Sous 50 cm, <code>tone()</code> bipe, et la pause raccourcit quand l’obstacle approche."
+      ],
+      "specs": [
+        [
+          "Capteur",
+          "HC-SR04"
+        ],
+        [
+          "Portée",
+          "2 – 400 cm"
+        ],
+        [
+          "Précision",
+          "≈ 3 mm"
+        ],
+        [
+          "Fréquence",
+          "40 kHz"
+        ],
+        [
+          "Alerte",
+          "< 50 cm"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Plaque d’essai",
+          "Relie les composants sans soudure."
+        ],
+        [
+          "ultrasonic",
+          "Capteur HC-SR04",
+          "Émet et écoute des ultrasons."
+        ],
+        [
+          "buzzer",
+          "Buzzer piézo",
+          "Bipe selon la distance."
+        ],
+        [
+          "obstacle",
+          "Obstacle",
+          "Le mur derrière la voiture."
+        ]
+      ],
+      "tags": [
+        [
+          "ultrasonic",
+          "Ultrasons"
+        ],
+        [
+          "buzzer",
+          "Buzzer"
+        ],
+        [
+          "obstacle",
+          "Obstacle"
+        ]
+      ],
+      "hint": "Faites glisser l’obstacle",
+      "challenge": {
+        "title": "Parlez en unités",
+        "goal": "Affichez la distance avec son unité, par exemple <code>42 cm</code>.",
+        "hint": "Remplacez <code>Serial.println(cm);</code> par <code>Serial.print(cm);</code> et <code>Serial.println(\" cm\");</code>."
+      }
+    },
+    "es": {
+      "title": "Construir un proyecto",
+      "subtitle": "Sensor de aparcamiento",
+      "heading": "Sensor de aparcamiento",
+      "lede": "El proyecto final reúne todo lo aprendido: un sensor de ultrasonidos mide la distancia a un obstáculo y el zumbador pita cada vez más rápido a medida que se acerca.",
+      "features": [
+        [
+          "radar",
+          "Sensor de ultrasonidos HC-SR04"
+        ],
+        [
+          "hand",
+          "Arrastra el bloque para acercarlo"
+        ],
+        [
+          "note",
+          "Pitidos cuyo ritmo depende de la distancia"
+        ]
+      ],
+      "pinoutSub": "Los cables de este montaje.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D9",
+          "TRIG",
+          "Dispara una ráfaga de ultrasonidos."
+        ],
+        [
+          "#1aa3a1",
+          "D10",
+          "ECHO",
+          "Duración del viaje de ida y vuelta."
+        ],
+        [
+          "#c0652d",
+          "D8",
+          "Zumbador +",
+          "Los pitidos."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "Alimenta el sensor."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "Sensor + zumbador",
+          "Retorno común."
+        ]
+      ],
+      "steps": [
+        "Un pulso de 10 µs en <code>TRIG</code> envía una ráfaga de ultrasonidos a 40 kHz.",
+        "<code>pulseIn(ECHO, HIGH)</code> mide el viaje de ida y vuelta en microsegundos.",
+        "Dividir entre 58 da la distancia en centímetros.",
+        "Por debajo de 50 cm, <code>tone()</code> pita y la pausa se acorta al acercarse el obstáculo."
+      ],
+      "specs": [
+        [
+          "Sensor",
+          "HC-SR04"
+        ],
+        [
+          "Alcance",
+          "2 – 400 cm"
+        ],
+        [
+          "Precisión",
+          "≈ 3 mm"
+        ],
+        [
+          "Frecuencia",
+          "40 kHz"
+        ],
+        [
+          "Alerta",
+          "< 50 cm"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "Protoboard",
+          "Conecta componentes sin soldar."
+        ],
+        [
+          "ultrasonic",
+          "Sensor HC-SR04",
+          "Emite y escucha ultrasonidos."
+        ],
+        [
+          "buzzer",
+          "Zumbador piezoeléctrico",
+          "Pita según la distancia."
+        ],
+        [
+          "obstacle",
+          "Obstáculo",
+          "La pared detrás del coche."
+        ]
+      ],
+      "tags": [
+        [
+          "ultrasonic",
+          "Ultrasonidos"
+        ],
+        [
+          "buzzer",
+          "Zumbador"
+        ],
+        [
+          "obstacle",
+          "Obstáculo"
+        ]
+      ],
+      "hint": "Arrastra el obstáculo",
+      "challenge": {
+        "title": "Habla con unidades",
+        "goal": "Muestra la distancia con su unidad, por ejemplo <code>42 cm</code>.",
+        "hint": "Sustituye <code>Serial.println(cm);</code> por <code>Serial.print(cm);</code> y <code>Serial.println(\" cm\");</code>."
+      }
+    },
+    "ar": {
+      "title": "ابنِ مشروعًا",
+      "subtitle": "حساس الركن",
+      "heading": "حساس الركن",
+      "lede": "يجمع المشروع النهائي كل ما تعلمته: يقيس مستشعر الموجات فوق الصوتية المسافة إلى عائق، ويصفّر الطنّان أسرع فأسرع كلما اقترب.",
+      "features": [
+        [
+          "radar",
+          "مستشعر الموجات فوق الصوتية HC-SR04"
+        ],
+        [
+          "hand",
+          "اسحب الكتلة لتقريبها"
+        ],
+        [
+          "note",
+          "صفارات يعتمد إيقاعها على المسافة"
+        ]
+      ],
+      "pinoutSub": "أسلاك هذا التركيب.",
+      "pinout": [
+        [
+          "#2a56a3",
+          "D9",
+          "TRIG",
+          "يطلق دفعة من الموجات فوق الصوتية."
+        ],
+        [
+          "#1aa3a1",
+          "D10",
+          "ECHO",
+          "مدة الذهاب والإياب."
+        ],
+        [
+          "#c0652d",
+          "D8",
+          "الطنّان +",
+          "الصفارات."
+        ],
+        [
+          "#d64a3a",
+          "5V",
+          "VCC",
+          "يغذّي المستشعر."
+        ],
+        [
+          "#2f3547",
+          "GND",
+          "المستشعر + الطنّان",
+          "عودة مشتركة."
+        ]
+      ],
+      "steps": [
+        "ترسل نبضة مدتها 10 ميكروثانية على <code>TRIG</code> دفعة موجات فوق صوتية بتردد 40 كيلوهرتز.",
+        "يقيس <code>pulseIn(ECHO, HIGH)</code> زمن الذهاب والإياب بالميكروثانية.",
+        "القسمة على 58 تعطي المسافة بالسنتيمتر.",
+        "تحت 50 سم يصفّر <code>tone()</code>، وتقصر فترة الانتظار كلما اقترب العائق."
+      ],
+      "specs": [
+        [
+          "المستشعر",
+          "HC-SR04"
+        ],
+        [
+          "المدى",
+          "2 – 400 سم"
+        ],
+        [
+          "الدقة",
+          "≈ 3 مم"
+        ],
+        [
+          "التردد",
+          "40 كيلوهرتز"
+        ],
+        [
+          "التنبيه",
+          "أقل من 50 سم"
+        ]
+      ],
+      "parts": [
+        [
+          "breadboard",
+          "لوحة التجارب",
+          "تصل المكونات دون لحام."
+        ],
+        [
+          "ultrasonic",
+          "مستشعر HC-SR04",
+          "يرسل الموجات فوق الصوتية ويستقبلها."
+        ],
+        [
+          "buzzer",
+          "طنّان كهرضغطي",
+          "يصفّر بحسب المسافة."
+        ],
+        [
+          "obstacle",
+          "العائق",
+          "الجدار خلف السيارة."
+        ]
+      ],
+      "tags": [
+        [
+          "ultrasonic",
+          "الموجات فوق الصوتية"
+        ],
+        [
+          "buzzer",
+          "الطنّان"
+        ],
+        [
+          "obstacle",
+          "العائق"
+        ]
+      ],
+      "hint": "اسحب العائق",
+      "challenge": {
+        "title": "تحدّث بالوحدات",
+        "goal": "اطبع المسافة مع وحدتها، مثل <code>42 cm</code>.",
+        "hint": "استبدل <code>Serial.println(cm);</code> بـ <code>Serial.print(cm);</code> و<code>Serial.println(\" cm\");</code>."
+      }
+    }
+  }
+]

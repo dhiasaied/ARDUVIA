@@ -1,0 +1,65 @@
+// ARDUVIA design tokens — "Soft Sage & Cream"
+:root {
+  // palette
+  --bg: #f5f5ef;            // background
+  --bg-deep: #edf0e8;
+  --sidebar: #e5e9df;       // secondary surfaces
+  --card: #ffffff;          // cards
+  --card-soft: #fffffff2;
+  --surface: #e5e9df;
+  --code-bg: #fafbf7;
+  --line: #dce2d8;          // borders
+  --line-soft: #e9ede5;
+  --navy: #263d38;          // text / headings
+  --navy-2: #2f4a44;
+  --ink: #263d38;
+  --muted: #5e6f69;
+  --faint: #8a9a92;
+  --teal: #52796f;          // primary
+  --teal-deep: #436359;
+  --accent: #a8b9a1;        // secondary accent
+  --trace: #cbd4c6;
+  --track: #e5e9df;
+  --success: #668c70;
+  --warning: #c58b55;
+  --danger: #bd6862;        // error
+  // code
+  --kw: #3d6b8c;
+  --fn: #a8693a;
+  --str: #4f7a5a;
+  --num: #52796f;
+  --gutter: #a3afa8;
+  // type
+  --sans: 'Inter', 'Noto Sans Arabic', system-ui, sans-serif;
+  --display: 'Plus Jakarta Sans', 'Noto Sans Arabic', 'Inter', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  // motion & depth
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --shadow-soft: 0 8px 20px -14px rgba(38, 61, 56, 0.35);
+  --shadow-pop: 0 18px 40px -24px rgba(38, 61, 56, 0.4);
+  --tint: rgba(38, 61, 56, 0.06);
+  --tint-strong: rgba(38, 61, 56, 0.09);
+  --primary-tint: rgba(82, 121, 111, 0.12);
+  // direction helper: 1 in LTR, -1 in RTL (for transforms)
+  --dir: 1;
+  color-scheme: light;
+}
+
+[dir='rtl'] { --dir: -1; }
+
+// Display labels: uppercase, tracked. Plus Jakarta Sans is wider than a condensed
+// face, so sizes are scaled to keep the original proportions.
+@mixin label($size: 17px, $weight: 700, $spacing: 0.05em) {
+  font-family: var(--display);
+  font-size: $size * 0.86;
+  font-weight: $weight;
+  letter-spacing: $spacing;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+@mixin card {
+  border: 1.5px solid var(--line);
+  background: var(--card-soft);
+  border-radius: 12px;
+}

@@ -1,0 +1,10 @@
+// Global design system. Partials are ordered from tokens → layout → components;
+// the compact (mobile) overrides live at the end of _layout and win by specificity.
+@use 'styles/tokens';
+@use 'styles/base';
+@use 'styles/chrome';
+@use 'styles/stage';
+@use 'styles/panels';
+@use 'styles/lessons';
+@use 'styles/layout';
+@use 'styles/premium';

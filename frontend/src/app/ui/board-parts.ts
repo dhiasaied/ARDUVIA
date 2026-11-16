@@ -1,0 +1,52 @@
+import { Locale, PartInfo } from '../core/models';
+
+/** The Uno's own parts, shown in the Components flyout and the inspector. */
+export const BOARD_PARTS: Record<Locale, PartInfo[]> = {
+  fr: [
+    { id: 'mcu', name: 'ATmega328P', desc: 'Le microcontrôleur 8 bits qui exécute votre code à 16 MHz.' },
+    { id: 'usb', name: 'Port USB-B', desc: 'Téléverse les programmes et alimente la carte depuis l’ordinateur.' },
+    { id: 'jack', name: 'Prise d’alimentation', desc: 'Alimentez la carte avec un adaptateur ou une pile de 7–12 V.' },
+    { id: 'reset', name: 'Bouton reset', desc: 'Redémarre votre programme depuis le début.' },
+    { id: 'digital', name: 'Broches numériques', desc: 'D0–D13, plus GND, AREF et les broches I²C SDA/SCL.' },
+    { id: 'power', name: 'Broches d’alimentation', desc: '5 V, 3,3 V, GND et VIN pour vos montages.' },
+    { id: 'analog', name: 'Broches analogiques A0–A5', desc: 'Lisent des tensions entre 0 et 5 V.' },
+    { id: 'u2', name: 'ATmega16U2', desc: 'Convertit l’USB en liaison série pour dialoguer avec l’ordinateur.' },
+    { id: 'crystal', name: 'Quartz 16 MHz', desc: 'Donne le tempo à la puce d’interface USB.' },
+    { id: 'ledL', name: 'LED « L »', desc: 'Petite LED reliée à la broche 13, idéale pour un premier test.' },
+  ],
+  en: [
+    { id: 'mcu', name: 'ATmega328P', desc: 'The 8-bit microcontroller that runs your code at 16 MHz.' },
+    { id: 'usb', name: 'USB-B port', desc: 'Uploads sketches and powers the board from your computer.' },
+    { id: 'jack', name: 'Power jack', desc: 'Power the board from a 7–12 V adapter or battery.' },
+    { id: 'reset', name: 'Reset button', desc: 'Restarts your sketch from the beginning.' },
+    { id: 'digital', name: 'Digital pins', desc: 'D0–D13, plus GND, AREF and the I²C SDA/SCL pins.' },
+    { id: 'power', name: 'Power pins', desc: '5 V, 3.3 V, GND and VIN for your circuits.' },
+    { id: 'analog', name: 'Analog pins A0–A5', desc: 'Read voltages between 0 and 5 V.' },
+    { id: 'u2', name: 'ATmega16U2', desc: 'Bridges USB to serial so your computer can talk to the board.' },
+    { id: 'crystal', name: '16 MHz crystal', desc: 'Keeps time for the USB interface chip.' },
+    { id: 'ledL', name: '“L” LED', desc: 'Tiny LED wired to pin 13, perfect for a first test.' },
+  ],  es: [
+    { id: 'mcu', name: 'ATmega328P', desc: 'El microcontrolador de 8 bits que ejecuta tu código a 16 MHz.' },
+    { id: 'usb', name: 'Puerto USB-B', desc: 'Carga los programas y alimenta la placa desde el ordenador.' },
+    { id: 'jack', name: 'Conector de alimentación', desc: 'Alimenta la placa con un adaptador o una batería de 7–12 V.' },
+    { id: 'reset', name: 'Botón de reinicio', desc: 'Reinicia tu programa desde el principio.' },
+    { id: 'digital', name: 'Pines digitales', desc: 'D0–D13, además de GND, AREF y los pines I²C SDA/SCL.' },
+    { id: 'power', name: 'Pines de alimentación', desc: '5 V, 3,3 V, GND y VIN para tus circuitos.' },
+    { id: 'analog', name: 'Pines analógicos A0–A5', desc: 'Leen tensiones entre 0 y 5 V.' },
+    { id: 'u2', name: 'ATmega16U2', desc: 'Convierte USB en serie para que el ordenador hable con la placa.' },
+    { id: 'crystal', name: 'Cristal de 16 MHz', desc: 'Marca el ritmo del chip de interfaz USB.' },
+    { id: 'ledL', name: 'LED «L»', desc: 'Pequeño LED conectado al pin 13, ideal para una primera prueba.' },
+  ],
+  ar: [
+    { id: 'mcu', name: 'ATmega328P', desc: 'المتحكم الدقيق ذو 8 بت الذي ينفّذ شيفرتك بسرعة 16 ميغاهرتز.' },
+    { id: 'usb', name: 'منفذ USB-B', desc: 'يرفع البرامج ويغذّي اللوحة من الحاسوب.' },
+    { id: 'jack', name: 'مقبس التغذية', desc: 'غذِّ اللوحة بمحوّل أو بطارية من 7 إلى 12 فولت.' },
+    { id: 'reset', name: 'زر إعادة التشغيل', desc: 'يعيد تشغيل برنامجك من البداية.' },
+    { id: 'digital', name: 'المنافذ الرقمية', desc: 'D0–D13 إضافة إلى GND وAREF ومنفذَي I²C ‏SDA/SCL.' },
+    { id: 'power', name: 'منافذ التغذية', desc: '5 فولت و3.3 فولت وGND وVIN لدوائرك.' },
+    { id: 'analog', name: 'المنافذ التناظرية A0–A5', desc: 'تقرأ الجهود بين 0 و5 فولت.' },
+    { id: 'u2', name: 'ATmega16U2', desc: 'يحوّل USB إلى اتصال تسلسلي ليتمكن الحاسوب من التخاطب مع اللوحة.' },
+    { id: 'crystal', name: 'بلّورة 16 ميغاهرتز', desc: 'تضبط توقيت شريحة واجهة USB.' },
+    { id: 'ledL', name: 'المصباح «L»', desc: 'مصباح صغير متصل بالمنفذ 13، مثالي لأول تجربة.' },
+  ],
+};
